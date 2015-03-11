@@ -2,7 +2,7 @@
 
 namespace MobiliTips.MvxPlugin.MvxForms.Sample.WinPhone.Views
 {
-    public class BaseView : MvxPhonePage
+    public abstract class BaseView : MvxPhonePage
     {
     }
 }
