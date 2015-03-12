@@ -14,11 +14,29 @@ namespace MobiliTips.MvxPlugin.MvxForms
     {
         private readonly string _viewModelSuffix;
         private readonly string _viewSuffix;
-        public Application MvxFormsApp { get; private set; }
+        private Application _mvxFormsApp;
+
+        public Application MvxFormsApp
+        {
+            get { return _mvxFormsApp; }
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentException("MvxFormsApp cannot be null");
+                }
+
+                _mvxFormsApp = value;
+            }
+        }
+
+        protected MvxFormsBaseViewPresenter()
+        {
+        }
 
         protected MvxFormsBaseViewPresenter(Application mvxFormsApp, string viewModelSuffix = "ViewModel", string viewSuffix = "View")
         {
-            MvxFormsApp = mvxFormsApp;
+            _mvxFormsApp = mvxFormsApp;
             _viewModelSuffix = viewModelSuffix;
             _viewSuffix = viewSuffix;
         }
