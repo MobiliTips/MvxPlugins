@@ -12,14 +12,12 @@ namespace MobiliTips.MvxPlugin.MvxForms
     public abstract class MvxFormsBaseViewPresenter
         : IMvxViewPresenter
     {
-        private readonly string _viewModelSuffix;
         private readonly string _viewSuffix;
         public readonly Application MvxFormsApp;
 
-        protected MvxFormsBaseViewPresenter(Application mvxFormsApp, string viewModelSuffix = "ViewModel", string viewSuffix = "View")
+        protected MvxFormsBaseViewPresenter(Application mvxFormsApp, string viewSuffix = "View")
         {
             MvxFormsApp = mvxFormsApp;
-            _viewModelSuffix = viewModelSuffix;
             _viewSuffix = viewSuffix;
         }
 
@@ -50,7 +48,7 @@ namespace MobiliTips.MvxPlugin.MvxForms
         private async Task<bool> TryShowPage(MvxViewModelRequest request)
         {
             var viewModelName = request.ViewModelType.Name;
-            var viewName = viewModelName.Replace(_viewModelSuffix, _viewSuffix);
+            var viewName = viewModelName.Replace("ViewModel", _viewSuffix);
             var view = request.ViewModelType.GetTypeInfo().Assembly.DefinedTypes.FirstOrDefault(x => x.Name == viewName);
             if (view == null)
             {

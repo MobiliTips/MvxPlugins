@@ -10,8 +10,8 @@ namespace MobiliTips.MvxPlugin.MvxForms.Touch
     {
         private readonly UIWindow _window;
 
-        public MvxFormsTouchViewPresenter(Application mvxFormsApp, UIWindow window, string viewModelSuffix = "ViewModel", string viewSuffix = "View")
-            : base(mvxFormsApp, viewModelSuffix, viewSuffix)
+        public MvxFormsTouchViewPresenter(Application mvxFormsApp, UIWindow window, string viewSuffix = "View")
+            : base(mvxFormsApp, viewSuffix)
         {
             _window = window;
         }

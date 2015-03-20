@@ -6,8 +6,8 @@ namespace MobiliTips.MvxPlugin.MvxForms.Droid
         : MvxFormsBaseViewPresenter
         , IMvxAndroidViewPresenter
     {
-        public MvxFormsAndroidViewPresenter(MvxFormsApp mvxFormsApp, string viewModelSuffix = "ViewModel", string viewSuffix = "View")
-            : base(mvxFormsApp, viewModelSuffix, viewSuffix)
+        public MvxFormsAndroidViewPresenter(MvxFormsApp mvxFormsApp, string viewSuffix = "View")
+            : base(mvxFormsApp, viewSuffix)
         {
         }
     }

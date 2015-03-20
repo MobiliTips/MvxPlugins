@@ -20,8 +20,8 @@ namespace MobiliTips.MvxPlugin.MvxForms.WindowsPhone
     {
         private readonly PhoneApplicationFrame _rootFrame;
 
-        public MvxFormsWindowsPhoneViewPresenter(Application mvxFormsApp, PhoneApplicationFrame rootFrame, string viewModelSuffix = "ViewModel", string viewSuffix = "View")
-            : base(mvxFormsApp, viewModelSuffix, viewSuffix)
+        public MvxFormsWindowsPhoneViewPresenter(Application mvxFormsApp, PhoneApplicationFrame rootFrame, string viewSuffix = "View")
+            : base(mvxFormsApp, viewSuffix)
         {
             _rootFrame = rootFrame;
         }
