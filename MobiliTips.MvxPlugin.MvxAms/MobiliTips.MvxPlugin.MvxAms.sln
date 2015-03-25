@@ -1,0 +1,91 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobiliTips.MvxPlugin.MvxAms", "MobiliTips.MvxPlugin.MvxAms\MobiliTips.MvxPlugin.MvxAms.csproj", "{02DE3D0E-7608-4DB2-9FCF-80A77D55AC0F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{5CA98218-BD2B-4BC6-9D64-D204DA4CCEF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobiliTips.MvxPlugin.MvxAms.Sample.Core", "Samples\MobiliTips.MvxPlugin.MvxAms.Sample.Core\MobiliTips.MvxPlugin.MvxAms.Sample.Core.csproj", "{545A5679-765E-4E1B-A851-5996867F3918}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobiliTips.MvxPlugin.MvxAms.Sample.WinPhone", "Samples\MobiliTips.MvxPlugin.MvxAms.Sample.WinPhone\MobiliTips.MvxPlugin.MvxAms.Sample.WinPhone.csproj", "{53084B5F-72F1-432D-8F6A-04E44A7624EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Motip.Resources.Model", "..\..\IdeaToStores\Motip.Resources\Motip.Resources.Model\Motip.Resources.Model.csproj", "{E5707676-D1A1-48C5-AFB6-BEC49A30603F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobiliTips.MvxPlugin.MvxAms.WindowsPhone", "MobiliTips.MvxPlugin.MvxAms.WindowsPhone\MobiliTips.MvxPlugin.MvxAms.WindowsPhone.csproj", "{ABF4DCA1-173F-4D35-BA17-3AE197745D5C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02DE3D0E-7608-4DB2-9FCF-80A77D55AC0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02DE3D0E-7608-4DB2-9FCF-80A77D55AC0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02DE3D0E-7608-4DB2-9FCF-80A77D55AC0F}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{02DE3D0E-7608-4DB2-9FCF-80A77D55AC0F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{02DE3D0E-7608-4DB2-9FCF-80A77D55AC0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02DE3D0E-7608-4DB2-9FCF-80A77D55AC0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02DE3D0E-7608-4DB2-9FCF-80A77D55AC0F}.Release|ARM.ActiveCfg = Release|Any CPU
+		{02DE3D0E-7608-4DB2-9FCF-80A77D55AC0F}.Release|x86.ActiveCfg = Release|Any CPU
+		{545A5679-765E-4E1B-A851-5996867F3918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{545A5679-765E-4E1B-A851-5996867F3918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{545A5679-765E-4E1B-A851-5996867F3918}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{545A5679-765E-4E1B-A851-5996867F3918}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{545A5679-765E-4E1B-A851-5996867F3918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{545A5679-765E-4E1B-A851-5996867F3918}.Release|Any CPU.Build.0 = Release|Any CPU
+		{545A5679-765E-4E1B-A851-5996867F3918}.Release|ARM.ActiveCfg = Release|Any CPU
+		{545A5679-765E-4E1B-A851-5996867F3918}.Release|x86.ActiveCfg = Release|Any CPU
+		{53084B5F-72F1-432D-8F6A-04E44A7624EE}.Debug|Any CPU.ActiveCfg = Debug|ARM
+		{53084B5F-72F1-432D-8F6A-04E44A7624EE}.Debug|Any CPU.Build.0 = Debug|ARM
+		{53084B5F-72F1-432D-8F6A-04E44A7624EE}.Debug|Any CPU.Deploy.0 = Debug|ARM
+		{53084B5F-72F1-432D-8F6A-04E44A7624EE}.Debug|ARM.ActiveCfg = Debug|ARM
+		{53084B5F-72F1-432D-8F6A-04E44A7624EE}.Debug|ARM.Build.0 = Debug|ARM
+		{53084B5F-72F1-432D-8F6A-04E44A7624EE}.Debug|ARM.Deploy.0 = Debug|ARM
+		{53084B5F-72F1-432D-8F6A-04E44A7624EE}.Debug|x86.ActiveCfg = Debug|x86
+		{53084B5F-72F1-432D-8F6A-04E44A7624EE}.Debug|x86.Build.0 = Debug|x86
+		{53084B5F-72F1-432D-8F6A-04E44A7624EE}.Debug|x86.Deploy.0 = Debug|x86
+		{53084B5F-72F1-432D-8F6A-04E44A7624EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53084B5F-72F1-432D-8F6A-04E44A7624EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53084B5F-72F1-432D-8F6A-04E44A7624EE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{53084B5F-72F1-432D-8F6A-04E44A7624EE}.Release|ARM.ActiveCfg = Release|ARM
+		{53084B5F-72F1-432D-8F6A-04E44A7624EE}.Release|ARM.Build.0 = Release|ARM
+		{53084B5F-72F1-432D-8F6A-04E44A7624EE}.Release|ARM.Deploy.0 = Release|ARM
+		{53084B5F-72F1-432D-8F6A-04E44A7624EE}.Release|x86.ActiveCfg = Release|x86
+		{53084B5F-72F1-432D-8F6A-04E44A7624EE}.Release|x86.Build.0 = Release|x86
+		{53084B5F-72F1-432D-8F6A-04E44A7624EE}.Release|x86.Deploy.0 = Release|x86
+		{E5707676-D1A1-48C5-AFB6-BEC49A30603F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5707676-D1A1-48C5-AFB6-BEC49A30603F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5707676-D1A1-48C5-AFB6-BEC49A30603F}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{E5707676-D1A1-48C5-AFB6-BEC49A30603F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E5707676-D1A1-48C5-AFB6-BEC49A30603F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5707676-D1A1-48C5-AFB6-BEC49A30603F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5707676-D1A1-48C5-AFB6-BEC49A30603F}.Release|ARM.ActiveCfg = Release|Any CPU
+		{E5707676-D1A1-48C5-AFB6-BEC49A30603F}.Release|x86.ActiveCfg = Release|Any CPU
+		{ABF4DCA1-173F-4D35-BA17-3AE197745D5C}.Debug|Any CPU.ActiveCfg = Debug|ARM
+		{ABF4DCA1-173F-4D35-BA17-3AE197745D5C}.Debug|Any CPU.Build.0 = Debug|ARM
+		{ABF4DCA1-173F-4D35-BA17-3AE197745D5C}.Debug|ARM.ActiveCfg = Debug|ARM
+		{ABF4DCA1-173F-4D35-BA17-3AE197745D5C}.Debug|ARM.Build.0 = Debug|ARM
+		{ABF4DCA1-173F-4D35-BA17-3AE197745D5C}.Debug|x86.ActiveCfg = Debug|x86
+		{ABF4DCA1-173F-4D35-BA17-3AE197745D5C}.Debug|x86.Build.0 = Debug|x86
+		{ABF4DCA1-173F-4D35-BA17-3AE197745D5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABF4DCA1-173F-4D35-BA17-3AE197745D5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABF4DCA1-173F-4D35-BA17-3AE197745D5C}.Release|ARM.ActiveCfg = Release|ARM
+		{ABF4DCA1-173F-4D35-BA17-3AE197745D5C}.Release|ARM.Build.0 = Release|ARM
+		{ABF4DCA1-173F-4D35-BA17-3AE197745D5C}.Release|x86.ActiveCfg = Release|x86
+		{ABF4DCA1-173F-4D35-BA17-3AE197745D5C}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{545A5679-765E-4E1B-A851-5996867F3918} = {5CA98218-BD2B-4BC6-9D64-D204DA4CCEF9}
+		{53084B5F-72F1-432D-8F6A-04E44A7624EE} = {5CA98218-BD2B-4BC6-9D64-D204DA4CCEF9}
+		{E5707676-D1A1-48C5-AFB6-BEC49A30603F} = {5CA98218-BD2B-4BC6-9D64-D204DA4CCEF9}
+	EndGlobalSection
+EndGlobal

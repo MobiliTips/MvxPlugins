@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobiliTips.MvxPlugin.MvxAms.Sample.Core.Views.FirstView">
+  <StackLayout Orientation="Vertical">
+    <Button Text="Refresh" Command="{Binding RefreshCommand}" HorizontalOptions="FillAndExpand"></Button>
+    <ListView ItemsSource="{Binding Places}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <TextCell Text="{Binding Name}"></TextCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>
