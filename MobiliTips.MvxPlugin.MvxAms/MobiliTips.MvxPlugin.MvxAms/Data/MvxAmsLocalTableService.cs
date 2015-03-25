@@ -6,7 +6,7 @@ using Cirrious.MvvmCross.Plugins.Messenger;
 using Microsoft.WindowsAzure.MobileServices;
 using Microsoft.WindowsAzure.MobileServices.Sync;
 
-namespace MobiliTips.MvxPlugin.MvxAms
+namespace MobiliTips.MvxPlugin.MvxAms.Data
 {
     public class MvxAmsLocalTableService<T> : IMvxAmsLocalTableService<T>
     {

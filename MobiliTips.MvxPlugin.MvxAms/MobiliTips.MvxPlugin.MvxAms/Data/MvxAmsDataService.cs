@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Threading.Tasks;
 using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Plugins.Messenger;
@@ -10,7 +9,7 @@ using Microsoft.WindowsAzure.MobileServices;
 using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
 using Microsoft.WindowsAzure.MobileServices.Sync;
 
-namespace MobiliTips.MvxPlugin.MvxAms
+namespace MobiliTips.MvxPlugin.MvxAms.Data
 {
     public class MvxAmsDataService : IMvxAmsDataService
     {

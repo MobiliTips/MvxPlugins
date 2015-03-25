@@ -5,7 +5,7 @@ using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Plugins.Messenger;
 using Microsoft.WindowsAzure.MobileServices;
 
-namespace MobiliTips.MvxPlugin.MvxAms
+namespace MobiliTips.MvxPlugin.MvxAms.Data
 {
     public class MvxAmsRemoteTableService<T> : IMvxAmsRemoteTableService<T>
     {

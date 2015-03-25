@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.WindowsAzure.MobileServices;
+using MobiliTips.MvxPlugin.MvxAms.Data;
 using Motip.Resources.Model;
 
 namespace MobiliTips.MvxPlugin.MvxAms.Sample.Core.Model

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MobiliTips.MvxPlugin.MvxAms
+namespace MobiliTips.MvxPlugin.MvxAms.Data
 {
     public interface ITableData
     {

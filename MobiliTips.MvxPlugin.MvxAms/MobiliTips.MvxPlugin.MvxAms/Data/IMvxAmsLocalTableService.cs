@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.WindowsAzure.MobileServices;
 
-namespace MobiliTips.MvxPlugin.MvxAms
+namespace MobiliTips.MvxPlugin.MvxAms.Data
 {
     public interface IMvxAmsLocalTableService<T> : IMvxAmsTableService<T>
     {

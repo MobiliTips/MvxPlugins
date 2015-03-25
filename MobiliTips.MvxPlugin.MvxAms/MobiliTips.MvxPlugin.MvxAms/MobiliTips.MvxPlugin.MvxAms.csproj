@@ -38,19 +38,24 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MvxAmsLocalTableService.cs" />
-    <Compile Include="MvxAmsRemoteTableService.cs" />
-    <Compile Include="IMvxAmsDataService.cs" />
-    <Compile Include="IMvxAmsTableService.cs" />
-    <Compile Include="ITableData.cs" />
-    <Compile Include="MvxAmsDataService.cs" />
+    <Compile Include="Api\IMvxAmsApiService.cs" />
+    <Compile Include="Api\MvxAmsApiService.cs" />
+    <Compile Include="Data\EntityData.cs" />
+    <Compile Include="Data\IMvxAmsDataService.cs" />
+    <Compile Include="Data\IMvxAmsLocalTableService.cs" />
+    <Compile Include="Data\IMvxAmsRemoteTableService.cs" />
+    <Compile Include="Data\IMvxAmsTableService.cs" />
+    <Compile Include="Data\ITableData.cs" />
+    <Compile Include="Data\MvxAmsDataService.cs" />
+    <Compile Include="Data\MvxAmsLocalTableService.cs" />
+    <Compile Include="Data\MvxAmsRemoteTableService.cs" />
+    <Compile Include="Identity\IMvxAmsIdentityService.cs" />
+    <Compile Include="Identity\MvxAmsIdentityService.cs" />
     <Compile Include="MvxAmsService.cs" />
     <Compile Include="MvxAmsErrorMessage.cs" />
     <Compile Include="MvxAmsPluginConfiguration.cs" />
     <Compile Include="IMvxAmsPluginConfiguration.cs" />
-    <Compile Include="IMvxAmsLocalTableService.cs" />
     <Compile Include="PluginLoader.cs" />
-    <Compile Include="IMvxAmsRemoteTableService.cs" />
     <Compile Include="IMvxAmsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -87,6 +92,7 @@
       <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
