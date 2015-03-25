@@ -10,19 +10,40 @@ namespace MobiliTips.MvxPlugin.MvxAms
     public class MvxAmsRemoteTableService<T> : IMvxAmsRemoteTableService<T>
     {
         private readonly MobileServiceClient _client;
-        private readonly IMobileServiceTable<T> _remoteTable;
+        private IMobileServiceTable<T> _remoteTable;
         private readonly IMvxMessenger _messenger;
 
         public MvxAmsRemoteTableService(MobileServiceClient client)
         {
             _client = client;
-            _remoteTable = _client.GetTable<T>();
             _messenger = Mvx.Resolve<IMvxMessenger>();
+        }
+
+        private async Task<bool> InitializeAsync()
+        {
+            TimeSpan duration;
+            var waitingtime = TimeSpan.FromSeconds(1);
+            var timeout = TimeSpan.FromSeconds(30);
+            while (!_client.SyncContext.IsInitialized && duration < timeout)
+            {
+                await Task.Delay(waitingtime);
+                duration = duration.Add(waitingtime);
+            }
+            if (_client.SyncContext.IsInitialized)
+            {
+                _remoteTable = _client.GetTable<T>();
+            }
+            else
+            {
+                _messenger.Publish(new MvxAmsErrorMessage(this, 
+                    new MobileServiceInvalidOperationException(string.Format("Initialization timed out after {0} sec", duration.TotalSeconds), null, null)));
+            }
+            return _client.SyncContext.IsInitialized;
         }
 
         public async Task<MobileServiceCollection<T, T>> ToCollectionAsync(Func<IMobileServiceTableQuery<T>, IMobileServiceTableQuery<T>> query = null)
         {
-            if(!_client.SyncContext.IsInitialized) return null;
+            if (!await InitializeAsync()) return null;
             try
             {
                 return query == null ? await _remoteTable.CreateQuery().ToCollectionAsync() : await query(_remoteTable.CreateQuery()).ToCollectionAsync();
@@ -36,7 +57,7 @@ namespace MobiliTips.MvxPlugin.MvxAms
 
         public async Task<IList<T>> ToListAsync(Func<IMobileServiceTableQuery<T>, IMobileServiceTableQuery<T>> query)
         {
-            if (!_client.SyncContext.IsInitialized) return null;
+            if (!await InitializeAsync()) return null;
             try
             {
                 return query == null ? await _remoteTable.CreateQuery().ToListAsync() : await query(_remoteTable.CreateQuery()).ToListAsync();
@@ -50,7 +71,7 @@ namespace MobiliTips.MvxPlugin.MvxAms
 
         public async Task<IEnumerable<T>> ToEnumerableAsync(Func<IMobileServiceTableQuery<T>, IMobileServiceTableQuery<T>> query)
         {
-            if (!_client.SyncContext.IsInitialized) return null;
+            if (!await InitializeAsync()) return null;
             try
             {
                 return query == null ? await _remoteTable.CreateQuery().ToEnumerableAsync() : await query(_remoteTable.CreateQuery()).ToEnumerableAsync();
@@ -64,7 +85,7 @@ namespace MobiliTips.MvxPlugin.MvxAms
 
         public async Task<T> LookupAsync(string entityId)
         {
-            if (!_client.SyncContext.IsInitialized) return default(T);
+            if (!await InitializeAsync()) return default(T);
             try
             {
                 return await _remoteTable.LookupAsync(entityId);
@@ -78,7 +99,7 @@ namespace MobiliTips.MvxPlugin.MvxAms
 
         public async Task RefreshAsync(T instance)
         {
-            if (!_client.SyncContext.IsInitialized) return;
+            if (!await InitializeAsync()) return;
             try
             {
                 await _remoteTable.RefreshAsync(instance);
@@ -91,7 +112,7 @@ namespace MobiliTips.MvxPlugin.MvxAms
 
         public async Task InsertAsync(T instance)
         {
-            if (!_client.SyncContext.IsInitialized) return;
+            if (!await InitializeAsync()) return;
             try
             {
                 await _remoteTable.InsertAsync(instance);
@@ -104,7 +125,7 @@ namespace MobiliTips.MvxPlugin.MvxAms
 
         public async Task UpdateAsync(T instance)
         {
-            if (!_client.SyncContext.IsInitialized) return;
+            if (!await InitializeAsync()) return;
             try
             {
                 await _remoteTable.UpdateAsync(instance);
@@ -117,7 +138,7 @@ namespace MobiliTips.MvxPlugin.MvxAms
 
         public async Task DeleteAsync(T instance)
         {
-            if (!_client.SyncContext.IsInitialized) return;
+            if (!await InitializeAsync()) return;
             try
             {
                 await _remoteTable.DeleteAsync(instance);
@@ -130,7 +151,7 @@ namespace MobiliTips.MvxPlugin.MvxAms
 
         public async Task UndeleteAsync(T instance)
         {
-            if (!_client.SyncContext.IsInitialized) return;
+            if (!await InitializeAsync()) return;
             try
             {
                 await _remoteTable.UndeleteAsync(instance);

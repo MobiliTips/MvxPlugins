@@ -87,12 +87,6 @@ namespace MobiliTips.MvxPlugin.MvxAms
 
         public IMvxAmsLocalTableService<T> LocalTable<T>()
         {
-            if (!_client.SyncContext.IsInitialized)
-            {
-                Mvx.TaggedError("MvxAms", "Unable to process the request while initialization is not complete");
-                return null;
-            }
-
             IMvxAmsLocalTableService<T> localTable;
             Mvx.TryResolve(out localTable);
             if (localTable == null)
@@ -105,12 +99,6 @@ namespace MobiliTips.MvxPlugin.MvxAms
 
         public IMvxAmsRemoteTableService<T> RemoteTable<T>()
         {
-            if (!_client.SyncContext.IsInitialized)
-            {
-                Mvx.TaggedError("MvxAms", "Unable to process the request while initialization is not complete");
-                return null;
-            }
-
             IMvxAmsRemoteTableService<T> remoteTable;
             Mvx.TryResolve(out remoteTable);
             if(remoteTable == null)

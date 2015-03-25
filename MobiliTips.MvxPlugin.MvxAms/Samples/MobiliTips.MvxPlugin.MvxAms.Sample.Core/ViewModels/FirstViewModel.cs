@@ -18,7 +18,7 @@ namespace MobiliTips.MvxPlugin.MvxAms.Sample.Core.ViewModels
 
         public async Task Init()
         {
-            await _azureMobileService.Data.LocalTable<Place>().Pull();
+            //await _azureMobileService.Data.LocalTable<Place>().Pull();
             Places = await _azureMobileService.Data.LocalTable<Place>().ToCollectionAsync(query => query.Where(place => place.Name.Contains("Test")).Take(3));
         }
 

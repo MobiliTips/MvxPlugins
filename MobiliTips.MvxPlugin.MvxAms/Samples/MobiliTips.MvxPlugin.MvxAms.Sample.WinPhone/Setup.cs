@@ -44,8 +44,8 @@ namespace MobiliTips.MvxPlugin.MvxAms.Sample.WinPhone
         protected override IMvxPluginConfiguration GetPluginConfiguration(Type plugin)
         {
             return plugin == typeof(MobiliTips.MvxPlugin.MvxAms.WindowsPhone.Plugin) ?
-                new MvxAmsPluginConfiguration("https://motip-ams.azure-mobile.net/", 
-                    "lwqbgyHJmGLjGhwRaGxkLXZGRyduSl92", 
+                new MvxAmsPluginConfiguration("YOURURL",
+                    "YOURKEY", 
                     "amslocalstore.db", 
                     string.Empty,
                     typeof(Core.App).GetTypeInfo().Assembly) : 
