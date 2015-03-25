@@ -10,7 +10,7 @@ namespace MobiliTips.MvxPlugin.MvxAms
         public MvxAmsService(IMvxAmsPluginConfiguration configuration)
         {
             // Init mobile service client
-            _client = new MobileServiceClient(configuration.Url, configuration.Key);
+            _client = new MobileServiceClient(configuration.AmsUrl, configuration.AmsAppKey);
 
             // Init data service
             _data = new MvxAmsDataService(configuration, _client);

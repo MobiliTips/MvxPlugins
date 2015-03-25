@@ -45,9 +45,7 @@ namespace MobiliTips.MvxPlugin.MvxAms.Sample.WinPhone
         {
             return plugin == typeof(MobiliTips.MvxPlugin.MvxAms.WindowsPhone.Plugin) ?
                 new MvxAmsPluginConfiguration("YOURURL",
-                    "YOURKEY", 
-                    "amslocalstore.db", 
-                    string.Empty,
+                    "YOURKEY",
                     typeof(Core.App).GetTypeInfo().Assembly) : 
                 null;
         }

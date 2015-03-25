@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Reflection;
 
 namespace MobiliTips.MvxPlugin.MvxAms
 {
     public interface IMvxAmsPluginConfiguration
     {
-        string Url { get; }
-        string Key { get; }
-        string DatabaseName { get; }
-        string DatabasePath { get; }
+        string AmsUrl { get; }
+        string AmsAppKey { get; }
         Assembly CoreAssembly { get; }
-        //List<Type> Tables { get; } 
+        string DatabasePath { get; }
+        string DatabaseName { get; }
+        TimeSpan InitTimeout { get; }
     }
 }
