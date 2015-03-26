@@ -18,7 +18,7 @@ namespace MobiliTips.MvxPlugin.MvxAms.WindowsPhone
 
         public void Load()
         {
-            Mvx.RegisterSingleton<IMvxAmsService>(new MvxAmsService(_configuration));
+            Mvx.RegisterSingleton<IMvxAmsService>(new MvxAmsService(_configuration, new MvxAmsWindowsPhoneIdentityService()));
         }
     }
 }

@@ -10,12 +10,14 @@ namespace MobiliTips.MvxPlugin.MvxAms.Data
 {
     public class MvxAmsLocalTableService<T> : IMvxAmsLocalTableService<T>
     {
+        private readonly IMvxAmsPluginConfiguration _configuration;
         private readonly MobileServiceClient _client;
         private IMobileServiceSyncTable<T> _localTable;
         private readonly IMvxMessenger _messenger;
 
-        public MvxAmsLocalTableService(MobileServiceClient client)
+        public MvxAmsLocalTableService(IMvxAmsPluginConfiguration configuration, MobileServiceClient client)
         {
+            _configuration = configuration;
             _client = client;
             _messenger = Mvx.Resolve<IMvxMessenger>();
         }
@@ -24,7 +26,7 @@ namespace MobiliTips.MvxPlugin.MvxAms.Data
         {
             TimeSpan duration;
             var waitingtime = TimeSpan.FromSeconds(1);
-            var timeout = TimeSpan.FromSeconds(30);
+            var timeout = _configuration.InitTimeout;
             while (!_client.SyncContext.IsInitialized && duration < timeout)
             {
                 await Task.Delay(waitingtime);

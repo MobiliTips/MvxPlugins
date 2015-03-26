@@ -9,12 +9,14 @@ namespace MobiliTips.MvxPlugin.MvxAms.Data
 {
     public class MvxAmsRemoteTableService<T> : IMvxAmsRemoteTableService<T>
     {
+        private readonly IMvxAmsPluginConfiguration _configuration;
         private readonly MobileServiceClient _client;
         private IMobileServiceTable<T> _remoteTable;
         private readonly IMvxMessenger _messenger;
 
-        public MvxAmsRemoteTableService(MobileServiceClient client)
+        public MvxAmsRemoteTableService(IMvxAmsPluginConfiguration configuration, MobileServiceClient client)
         {
+            _configuration = configuration;
             _client = client;
             _messenger = Mvx.Resolve<IMvxMessenger>();
         }
@@ -23,7 +25,7 @@ namespace MobiliTips.MvxPlugin.MvxAms.Data
         {
             TimeSpan duration;
             var waitingtime = TimeSpan.FromSeconds(1);
-            var timeout = TimeSpan.FromSeconds(30);
+            var timeout = _configuration.InitTimeout;
             while (!_client.SyncContext.IsInitialized && duration < timeout)
             {
                 await Task.Delay(waitingtime);

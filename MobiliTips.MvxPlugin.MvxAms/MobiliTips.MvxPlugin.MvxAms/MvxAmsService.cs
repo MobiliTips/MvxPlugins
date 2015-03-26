@@ -12,14 +12,14 @@ namespace MobiliTips.MvxPlugin.MvxAms
         private readonly IMvxAmsIdentityService _identity;
         private readonly IMvxAmsApiService _api;
 
-        public MvxAmsService(IMvxAmsPluginConfiguration configuration)
+        public MvxAmsService(IMvxAmsPluginConfiguration configuration, IMvxAmsPlatformIdentityService platformIdentityService)
         {
             // Init mobile service client
             _client = new MobileServiceClient(configuration.AmsUrl, configuration.AmsAppKey);
 
             // Init services
             _data = new MvxAmsDataService(configuration, _client);
-            _identity = new MvxAmsIdentityService(_client);
+            _identity = new MvxAmsIdentityService(_client, platformIdentityService);
             _api = new MvxAmsApiService(_client);
         }
 

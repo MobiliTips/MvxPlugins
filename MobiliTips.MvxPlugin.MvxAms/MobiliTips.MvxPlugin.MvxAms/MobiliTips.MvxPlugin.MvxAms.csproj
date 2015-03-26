@@ -49,6 +49,7 @@
     <Compile Include="Data\MvxAmsDataService.cs" />
     <Compile Include="Data\MvxAmsLocalTableService.cs" />
     <Compile Include="Data\MvxAmsRemoteTableService.cs" />
+    <Compile Include="Identity\IMvxAmsPlatformIdentityService.cs" />
     <Compile Include="Identity\IMvxAmsIdentityService.cs" />
     <Compile Include="Identity\MvxAmsIdentityService.cs" />
     <Compile Include="MvxAmsService.cs" />

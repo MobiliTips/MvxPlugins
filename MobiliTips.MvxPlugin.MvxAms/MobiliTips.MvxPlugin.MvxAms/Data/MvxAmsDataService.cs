@@ -90,7 +90,7 @@ namespace MobiliTips.MvxPlugin.MvxAms.Data
             Mvx.TryResolve(out localTable);
             if (localTable == null)
             {
-                localTable = new MvxAmsLocalTableService<T>(_client);
+                localTable = new MvxAmsLocalTableService<T>(_configuration, _client);
                 Mvx.RegisterSingleton(localTable);
             }
             return localTable;
@@ -102,7 +102,7 @@ namespace MobiliTips.MvxPlugin.MvxAms.Data
             Mvx.TryResolve(out remoteTable);
             if(remoteTable == null)
             {
-                remoteTable = new MvxAmsRemoteTableService<T>(_client);
+                remoteTable = new MvxAmsRemoteTableService<T>(_configuration, _client);
                 Mvx.RegisterSingleton(remoteTable);
             }
             return remoteTable;
