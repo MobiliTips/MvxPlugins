@@ -1,6 +1,8 @@
+using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Acr.XamForms.UserDialogs;
 using Cirrious.MvvmCross.ViewModels;
 using Microsoft.WindowsAzure.MobileServices;
 using MobiliTips.MvxPlugin.MvxAms.Sample.Core.Model;
@@ -11,16 +13,46 @@ namespace MobiliTips.MvxPlugin.MvxAms.Sample.Core.ViewModels
 		: BaseViewModel
     {
         private readonly IMvxAmsService _azureMobileService;
+        private readonly IUserDialogService _dialogService;
+        private string _errorMessage;
 
-        public FirstViewModel(IMvxAmsService azureMobileService)
+        public FirstViewModel(IMvxAmsService azureMobileService, IUserDialogService dialogService)
         {
             _azureMobileService = azureMobileService;
+            _dialogService = dialogService;
         }
 
         public async Task Init()
         {
-            await _azureMobileService.Data.LocalTable<Place>().Pull();
-            Places = await _azureMobileService.Data.LocalTable<Place>().ToCollectionAsync(query => query.Where(place => place.Name.Contains("Test")).Take(3));
+            _errorMessage = null;
+            try
+            {
+                await _azureMobileService.Data.LocalTable<Place>().Pull();
+            }
+            catch (Exception ex)
+            {
+                _errorMessage = ex.Message;
+            }
+            if (!string.IsNullOrEmpty(_errorMessage))
+            {
+                await _dialogService.AlertAsync(_errorMessage, "Unable to sync your data");
+            }
+            else
+            {
+                _errorMessage = null;
+                try
+                {
+                    Places = await _azureMobileService.Data.LocalTable<Place>().ToCollectionAsync(query => query.Where(place => place.Name.Contains("Test")).Take(3));
+                }
+                catch (Exception ex)
+                {
+                    _errorMessage = ex.Message;
+                }
+                if (!string.IsNullOrEmpty(_errorMessage))
+                {
+                    await _dialogService.AlertAsync(_errorMessage, "Unable retrieve your data");
+                }
+            }
         }
 
         private ObservableCollection<Place> _places;
@@ -42,7 +74,19 @@ namespace MobiliTips.MvxPlugin.MvxAms.Sample.Core.ViewModels
 
         private async Task RefreshAsync()
         {
-            Places = await _azureMobileService.Data.LocalTable<Place>().ToCollectionAsync(query => query.Where(place => place.Name.Contains("Test")).Take(5));
+            _errorMessage = null;
+            try
+            {
+                Places = await _azureMobileService.Data.LocalTable<Place>().ToCollectionAsync(query => query.Where(place => place.Name.Contains("Test")).Take(5));
+            }
+            catch (Exception ex)
+            {
+                _errorMessage = ex.Message;
+            }
+            if (!string.IsNullOrEmpty(_errorMessage))
+            {
+                await _dialogService.AlertAsync(_errorMessage, "Unable retrieve your data");
+            }
         }
 
         private MvxCommand _loginAsyncCommand;
@@ -57,7 +101,19 @@ namespace MobiliTips.MvxPlugin.MvxAms.Sample.Core.ViewModels
 
         private async Task LoginAsync()
         {
-            User = await _azureMobileService.Identity.LoginAsync(MobileServiceAuthenticationProvider.Facebook);
+            _errorMessage = null;
+            try
+            {
+                User = await _azureMobileService.Identity.LoginAsync(MobileServiceAuthenticationProvider.Facebook);
+            }
+            catch (Exception ex)
+            {
+                _errorMessage = ex.Message;
+            }
+            if (!string.IsNullOrEmpty(_errorMessage))
+            {
+                await _dialogService.AlertAsync(_errorMessage, "You have to be logged in");
+            }
         }
 
         private MobileServiceUser _user;

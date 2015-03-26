@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Resources;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
+using Acr.XamForms.UserDialogs;
+using Acr.XamForms.UserDialogs.WindowsPhone;
+using Cirrious.CrossCore;
+using Cirrious.MvvmCross.ViewModels;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using MobiliTips.MvxPlugin.MvxAms.Sample.WinPhone.Resources;
@@ -39,7 +42,7 @@ namespace MobiliTips.MvxPlugin.MvxAms.Sample.WinPhone
             if (Debugger.IsAttached)
             {
                 // Display the current frame rate counters.
-                Application.Current.Host.Settings.EnableFrameRateCounter = true;
+                Current.Host.Settings.EnableFrameRateCounter = true;
 
                 // Show the areas of the app that are being redrawn in each frame.
                 //Application.Current.Host.Settings.EnableRedrawRegions = true;
@@ -63,13 +66,16 @@ namespace MobiliTips.MvxPlugin.MvxAms.Sample.WinPhone
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
             RootFrame.Navigating += RootFrameOnNavigating;
+
+            // ACR UserDialogs
+            Mvx.RegisterSingleton<IUserDialogService>(new UserDialogService());
         }
 
         private void RootFrameOnNavigating(object sender, NavigatingCancelEventArgs args)
         {
             args.Cancel = true;
             RootFrame.Navigating -= RootFrameOnNavigating;
-            RootFrame.Dispatcher.BeginInvoke(() => { Cirrious.CrossCore.Mvx.Resolve<Cirrious.MvvmCross.ViewModels.IMvxAppStart>().Start(); });
+            RootFrame.Dispatcher.BeginInvoke(() => { Mvx.Resolve<IMvxAppStart>().Start(); });
         }
 
         // Code to execute when the application is activated (brought to foreground)

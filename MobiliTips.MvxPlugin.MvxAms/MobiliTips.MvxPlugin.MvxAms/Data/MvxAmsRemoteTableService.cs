@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Cirrious.CrossCore;
-using Cirrious.MvvmCross.Plugins.Messenger;
 using Microsoft.WindowsAzure.MobileServices;
 
 namespace MobiliTips.MvxPlugin.MvxAms.Data
@@ -12,13 +10,11 @@ namespace MobiliTips.MvxPlugin.MvxAms.Data
         private readonly IMvxAmsPluginConfiguration _configuration;
         private readonly MobileServiceClient _client;
         private IMobileServiceTable<T> _remoteTable;
-        private readonly IMvxMessenger _messenger;
 
         public MvxAmsRemoteTableService(IMvxAmsPluginConfiguration configuration, MobileServiceClient client)
         {
             _configuration = configuration;
             _client = client;
-            _messenger = Mvx.Resolve<IMvxMessenger>();
         }
 
         private async Task<bool> InitializeAsync()
@@ -35,133 +31,80 @@ namespace MobiliTips.MvxPlugin.MvxAms.Data
             {
                 _remoteTable = _client.GetTable<T>();
             }
-            else
-            {
-                _messenger.Publish(new MvxAmsErrorMessage(this, 
-                    new MobileServiceInvalidOperationException(string.Format("Initialization timed out after {0} sec", duration.TotalSeconds), null, null)));
-            }
+
             return _client.SyncContext.IsInitialized;
         }
 
         public async Task<MobileServiceCollection<T, T>> ToCollectionAsync(Func<IMobileServiceTableQuery<T>, IMobileServiceTableQuery<T>> query = null)
         {
-            if (!await InitializeAsync()) return null;
-            try
-            {
-                return query == null ? await _remoteTable.CreateQuery().ToCollectionAsync() : await query(_remoteTable.CreateQuery()).ToCollectionAsync();
-            }
-            catch (MobileServiceInvalidOperationException ex)
-            {
-                _messenger.Publish(new MvxAmsErrorMessage(this, ex));
-                return null;
-            }
+            if (!await InitializeAsync()) 
+                throw new MobileServiceInvalidOperationException("Unable to retrieve your data. Initialization failed.", null, null);
+            
+            return query == null ? await _remoteTable.CreateQuery().ToCollectionAsync() : await query(_remoteTable.CreateQuery()).ToCollectionAsync();
         }
 
         public async Task<IList<T>> ToListAsync(Func<IMobileServiceTableQuery<T>, IMobileServiceTableQuery<T>> query)
         {
-            if (!await InitializeAsync()) return null;
-            try
-            {
-                return query == null ? await _remoteTable.CreateQuery().ToListAsync() : await query(_remoteTable.CreateQuery()).ToListAsync();
-            }
-            catch (MobileServiceInvalidOperationException ex)
-            {
-                _messenger.Publish(new MvxAmsErrorMessage(this, ex));
-                return null;
-            }
+            if (!await InitializeAsync())
+                throw new MobileServiceInvalidOperationException("Unable to retrieve your data. Initialization failed.", null, null);
+            
+            return query == null ? await _remoteTable.CreateQuery().ToListAsync() : await query(_remoteTable.CreateQuery()).ToListAsync();
         }
 
         public async Task<IEnumerable<T>> ToEnumerableAsync(Func<IMobileServiceTableQuery<T>, IMobileServiceTableQuery<T>> query)
         {
-            if (!await InitializeAsync()) return null;
-            try
-            {
-                return query == null ? await _remoteTable.CreateQuery().ToEnumerableAsync() : await query(_remoteTable.CreateQuery()).ToEnumerableAsync();
-            }
-            catch (MobileServiceInvalidOperationException ex)
-            {
-                _messenger.Publish(new MvxAmsErrorMessage(this, ex));
-                return null;
-            }
+            if (!await InitializeAsync())
+                throw new MobileServiceInvalidOperationException("Unable to retrieve your data. Initialization failed.", null, null);
+            
+            return query == null ? await _remoteTable.CreateQuery().ToEnumerableAsync() : await query(_remoteTable.CreateQuery()).ToEnumerableAsync();
         }
 
         public async Task<T> LookupAsync(string entityId)
         {
-            if (!await InitializeAsync()) return default(T);
-            try
-            {
-                return await _remoteTable.LookupAsync(entityId);
-            }
-            catch (MobileServiceInvalidOperationException ex)
-            {
-                _messenger.Publish(new MvxAmsErrorMessage(this, ex));
-                return default(T);
-            }
+            if (!await InitializeAsync())
+                throw new MobileServiceInvalidOperationException("Unable to retrieve your data. Initialization failed.", null, null);
+            
+            return await _remoteTable.LookupAsync(entityId);
         }
 
         public async Task RefreshAsync(T instance)
         {
-            if (!await InitializeAsync()) return;
-            try
-            {
-                await _remoteTable.RefreshAsync(instance);
-            }
-            catch (MobileServiceInvalidOperationException ex)
-            {
-                _messenger.Publish(new MvxAmsErrorMessage(this, ex));
-            }
+            if (!await InitializeAsync())
+                throw new MobileServiceInvalidOperationException("Unable to refresh your data. Initialization failed.", null, null);
+            
+            await _remoteTable.RefreshAsync(instance);
         }
 
         public async Task InsertAsync(T instance)
         {
-            if (!await InitializeAsync()) return;
-            try
-            {
-                await _remoteTable.InsertAsync(instance);
-            }
-            catch (MobileServiceInvalidOperationException ex)
-            {
-                _messenger.Publish(new MvxAmsErrorMessage(this, ex));
-            }
+            if (!await InitializeAsync())
+                throw new MobileServiceInvalidOperationException("Unable to insert your data. Initialization failed.", null, null);
+            
+            await _remoteTable.InsertAsync(instance);
         }
 
         public async Task UpdateAsync(T instance)
         {
-            if (!await InitializeAsync()) return;
-            try
-            {
-                await _remoteTable.UpdateAsync(instance);
-            }
-            catch (MobileServiceInvalidOperationException ex)
-            {
-                _messenger.Publish(new MvxAmsErrorMessage(this, ex));
-            }
+            if (!await InitializeAsync())
+                throw new MobileServiceInvalidOperationException("Unable to update your data. Initialization failed.", null, null);
+            
+            await _remoteTable.UpdateAsync(instance);
         }
 
         public async Task DeleteAsync(T instance)
         {
-            if (!await InitializeAsync()) return;
-            try
-            {
-                await _remoteTable.DeleteAsync(instance);
-            }
-            catch (MobileServiceInvalidOperationException ex)
-            {
-                _messenger.Publish(new MvxAmsErrorMessage(this, ex));
-            }
+            if (!await InitializeAsync())
+                throw new MobileServiceInvalidOperationException("Unable to delete your data. Initialization failed.", null, null);
+            
+            await _remoteTable.DeleteAsync(instance);
         }
 
         public async Task UndeleteAsync(T instance)
         {
-            if (!await InitializeAsync()) return;
-            try
-            {
-                await _remoteTable.UndeleteAsync(instance);
-            }
-            catch (MobileServiceInvalidOperationException ex)
-            {
-                _messenger.Publish(new MvxAmsErrorMessage(this, ex));
-            }
+            if (!await InitializeAsync())
+                throw new MobileServiceInvalidOperationException("Unable to undelete your data. Initialization failed.", null, null);
+            
+            await _remoteTable.UndeleteAsync(instance);
         }
     }
 }

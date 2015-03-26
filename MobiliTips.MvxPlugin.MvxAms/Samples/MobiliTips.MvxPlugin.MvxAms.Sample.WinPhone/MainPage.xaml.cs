@@ -12,6 +12,7 @@ namespace MobiliTips.MvxPlugin.MvxAms.Sample.WinPhone
         {
             InitializeComponent();
 
+            // Xamarin.Forms
             var presenter = Mvx.Resolve<IMvxViewPresenter>() as MvxFormsWindowsPhoneViewPresenter;
             if (presenter == null) return;
 

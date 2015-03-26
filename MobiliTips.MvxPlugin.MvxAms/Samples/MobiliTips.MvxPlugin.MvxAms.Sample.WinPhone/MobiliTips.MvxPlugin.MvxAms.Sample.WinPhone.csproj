@@ -95,7 +95,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\MvxAmsPluginBootstrap.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="LocalizedStrings.cs" />
@@ -162,6 +161,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Acr.XamForms.UserDialogs">
+      <HintPath>..\..\packages\Acr.XamForms.UserDialogs.3.0.4\lib\wp8\Acr.XamForms.UserDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.XamForms.UserDialogs.WindowsPhone">
+      <HintPath>..\..\packages\Acr.XamForms.UserDialogs.3.0.4\lib\wp8\Acr.XamForms.UserDialogs.WindowsPhone.dll</HintPath>
+    </Reference>
     <Reference Include="Cirrious.CrossCore">
       <HintPath>..\..\packages\MvvmCross.HotTuna.CrossCore.3.5.0\lib\wp8\Cirrious.CrossCore.dll</HintPath>
     </Reference>
@@ -174,10 +179,6 @@
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Localization">
       <HintPath>..\..\packages\MvvmCross.HotTuna.CrossCore.3.5.0\lib\wp8\Cirrious.MvvmCross.Localization.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross.Plugins.Messenger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\MvvmCross.HotTuna.Plugin.Messenger.3.5.0\lib\wp8\Cirrious.MvvmCross.Plugins.Messenger.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.WindowsPhone">
       <HintPath>..\..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.5.0\lib\wp8\Cirrious.MvvmCross.WindowsPhone.dll</HintPath>
