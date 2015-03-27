@@ -1,11 +1,10 @@
 ﻿using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Views;
-using MobiliTips.MvxPlugin.MvxForms.WindowsPhone;
-using Xamarin.Forms.Platform.WinPhone;
+using $rootnamespace$.Presenters;
 
 namespace $rootnamespace$
 {
-    public partial class MainPage : FormsApplicationPage
+    public partial class MainPage
     {
         // Constructor
         public MainPage()

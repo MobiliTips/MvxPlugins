@@ -99,6 +99,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Presenters\MvxFormsWindowsPhoneViewPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -158,10 +159,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MobiliTips.MvxPlugin.MvxForms.WindowsPhone\MobiliTips.MvxPlugin.MvxForms.WindowsPhone.csproj">
-      <Project>{b6e51614-6989-4cea-bbba-944dba6be8fb}</Project>
-      <Name>MobiliTips.MvxPlugin.MvxForms.WindowsPhone</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\MobiliTips.MvxPlugin.MvxForms\MobiliTips.MvxPlugin.MvxForms.csproj">
       <Project>{06e23c6b-34b5-48b3-bf54-7fa470da9b3a}</Project>
       <Name>MobiliTips.MvxPlugin.MvxForms</Name>

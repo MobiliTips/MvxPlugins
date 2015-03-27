@@ -5,7 +5,7 @@ using Cirrious.MvvmCross.Views;
 using Cirrious.MvvmCross.WindowsPhone.Platform;
 using Cirrious.MvvmCross.WindowsPhone.Views;
 using Microsoft.Phone.Controls;
-using MobiliTips.MvxPlugin.MvxForms.WindowsPhone;
+using MobiliTips.MvxPlugin.MvxForms.Sample.WinPhone.Presenters;
 using Xamarin.Forms;
 
 namespace MobiliTips.MvxPlugin.MvxForms.Sample.WinPhone

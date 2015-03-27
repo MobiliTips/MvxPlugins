@@ -11,6 +11,6 @@
         }
         
         
-2. You can delete no more needed Views like FirstView from this Windows Phone project
+2. You can now delete no more needed files like all views except BaseView.cs
 
-2. Enjoy! :)
+3. Enjoy! :)

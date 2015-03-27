@@ -59,7 +59,7 @@ namespace MobiliTips.MvxPlugin.MvxForms
             var page = Activator.CreateInstance(view.AsType()) as ContentPage;
             if (page == null)
             {
-                Mvx.Error("Failed to create ContentPage {0}", viewName);
+                Mvx.Error("Failed to create ContentPage for {0}", viewName);
             }
             if (page == null)
                 return false;

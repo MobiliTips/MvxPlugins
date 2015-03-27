@@ -4,7 +4,7 @@ using Cirrious.MvvmCross.ViewModels;
 using Cirrious.MvvmCross.Touch.Platform;
 using Cirrious.MvvmCross.Touch.Views.Presenters;
 using Cirrious.MvvmCross.Views;
-using MobiliTips.MvxPlugin.MvxForms.Touch;
+using MobiliTips.MvxPlugin.MvxForms.Sample.iOS.Presenters;
 using UIKit;
 using Xamarin.Forms;
 

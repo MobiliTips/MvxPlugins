@@ -2,7 +2,7 @@
 
 		public override void InitializationComplete()
         {
-            StartActivity(typeof(MvxFormsApplicationActivity));
+            StartActivity(typeof(MvxFormsApplicationMainActivity));
         }
 
         protected override void OnCreate(Android.OS.Bundle bundle)
@@ -32,6 +32,6 @@
         }
 
 
-3. You can now remove unused files (if you want but not needed) like MainActivity.cs or all .axml files except SplashScreen.axml
+3. You can now remove no more used files like MainActivity.cs, all views except BaseView.cs and all .axml layout files except SplashScreen.axml
 
 4. Enjoy! :)

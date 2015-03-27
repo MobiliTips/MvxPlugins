@@ -66,9 +66,6 @@ namespace MobiliTips.MvxPlugin.MvxAms.Sample.WinPhone
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
             RootFrame.Navigating += RootFrameOnNavigating;
-
-            // ACR UserDialogs
-            Mvx.RegisterSingleton<IUserDialogService>(new UserDialogService());
         }
 
         private void RootFrameOnNavigating(object sender, NavigatingCancelEventArgs args)

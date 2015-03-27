@@ -1,7 +1,7 @@
 using Android.App;
 using Android.Content.PM;
+using Android.OS;
 using Cirrious.MvvmCross.Droid.Views;
-using MobiliTips.MvxPlugin.MvxForms.Droid;
 using Xamarin.Forms;
 
 namespace MobiliTips.MvxPlugin.MvxForms.Sample.Droid
@@ -22,10 +22,10 @@ namespace MobiliTips.MvxPlugin.MvxForms.Sample.Droid
 
         public override void InitializationComplete()
         {
-            StartActivity(typeof(MvxFormsApplicationActivity));
+            StartActivity(typeof(MvxFormsApplicationMainActivity));
         }
 
-        protected override void OnCreate(Android.OS.Bundle bundle)
+        protected override void OnCreate(Bundle bundle)
         {
             Forms.Init(this, bundle);
             // Leverage controls' StyleId attrib. to Xamarin.UITest

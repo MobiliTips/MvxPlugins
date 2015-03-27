@@ -5,7 +5,7 @@ using Cirrious.MvvmCross.Droid.Platform;
 using Cirrious.MvvmCross.Droid.Views;
 using Cirrious.MvvmCross.ViewModels;
 using Cirrious.MvvmCross.Views;
-using MobiliTips.MvxPlugin.MvxForms.Droid;
+using MobiliTips.MvxPlugin.MvxForms.Sample.Droid.Presenters;
 
 namespace MobiliTips.MvxPlugin.MvxForms.Sample.Droid
 {
@@ -17,7 +17,7 @@ namespace MobiliTips.MvxPlugin.MvxForms.Sample.Droid
 
         protected override IMvxApplication CreateApp()
         {
-            return new Sample.App();
+            return new App();
         }
 		
         protected override IMvxTrace CreateDebugTrace()

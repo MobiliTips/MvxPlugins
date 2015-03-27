@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("MobiliTips.MvxPlugin.MvxForms")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("MvvmCross plugin to work with Xamarin Forms")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("MobiliTips")]
 [assembly: AssemblyProduct("MobiliTips.MvxPlugin.MvxForms")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]

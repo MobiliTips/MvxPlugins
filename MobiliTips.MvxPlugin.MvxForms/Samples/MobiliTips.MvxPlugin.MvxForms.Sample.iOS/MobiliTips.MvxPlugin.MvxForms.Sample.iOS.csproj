@@ -3,13 +3,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProjectGuid>{C4B74734-7D53-4799-8705-50768627892D}</ProjectGuid>
+    <ProjectGuid>{31885A1D-1804-4C39-94D3-1AC970EC62E8}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>MobiliTips.MvxPlugin.MvxForms.Sample.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>MobiliTipsMvxPluginMvxFormsSampleiOS</AssemblyName>
-    <NuGetPackageImportStamp>d82f7d23</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>b926c1b2</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -89,6 +89,7 @@
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Presenters\MvxFormsTouchViewPresenter.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Views\BaseView.cs" />
     <None Include="Info.plist" />
@@ -96,7 +97,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\Default-568h@2x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Cirrious.CrossCore">
@@ -113,6 +114,7 @@
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Binding.Touch">
       <HintPath>..\..\packages\MvvmCross.HotTuna.CrossCore.3.5.0\lib\Xamarin.iOS10\Cirrious.MvvmCross.Binding.Touch.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Localization">
       <HintPath>..\..\packages\MvvmCross.HotTuna.CrossCore.3.5.0\lib\Xamarin.iOS10\Cirrious.MvvmCross.Localization.dll</HintPath>
@@ -131,6 +133,7 @@
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\..\packages\Xamarin.Forms.1.4.0.6341\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
@@ -138,12 +141,6 @@
     <Content Include="Entitlements.plist" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MobiliTips.MvxPlugin.MvxForms.Touch\MobiliTips.MvxPlugin.MvxForms.Touch.csproj">
-      <Project>{26cc35eb-a0ff-48d7-974d-b216426db625}</Project>
-      <Name>MobiliTips.MvxPlugin.MvxForms.Touch</Name>
-      <IsAppExtension>false</IsAppExtension>
-      <IsWatchApp>false</IsWatchApp>
-    </ProjectReference>
     <ProjectReference Include="..\..\MobiliTips.MvxPlugin.MvxForms\MobiliTips.MvxPlugin.MvxForms.csproj">
       <Project>{06e23c6b-34b5-48b3-bf54-7fa470da9b3a}</Project>
       <Name>MobiliTips.MvxPlugin.MvxForms</Name>
