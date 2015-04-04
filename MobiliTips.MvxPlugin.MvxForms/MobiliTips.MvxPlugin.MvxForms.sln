@@ -94,6 +94,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presenters", "Presenters", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobiliTips.MvxPlugin.MvxForms.Sample.WinStore", "Samples\MobiliTips.MvxPlugin.MvxForms.Sample.WinStore\MobiliTips.MvxPlugin.MvxForms.Sample.WinStore.csproj", "{02EC6EEA-5EAA-43A0-97C2-7E77F97B7FCB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WindowsStoreContent", "WindowsStoreContent", "{E3E045B2-1B97-40FC-B51C-2805AF1C3E38}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\WindowsStoreContent\MainPage.xaml.cs.pp = NuSpec\WindowsStoreContent\MainPage.xaml.cs.pp
+		NuSpec\WindowsStoreContent\MainPage.xaml.pp = NuSpec\WindowsStoreContent\MainPage.xaml.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presenters", "Presenters", "{7310F1A8-126E-4D96-86C3-26F7D4ADE024}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\WindowsStoreContent\Presenters\MvxFormsWindowsStoreViewPresenter.cs.pp = NuSpec\WindowsStoreContent\Presenters\MvxFormsWindowsStoreViewPresenter.cs.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxForms", "ToDo-MvxForms", "{20EDF964-4269-47C0-AFB0-B4186C1ABA59}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\WindowsStoreContent\ToDo-MvxForms\_WinStore Setup.txt = NuSpec\WindowsStoreContent\ToDo-MvxForms\_WinStore Setup.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Views", "Views", "{3A090F72-724E-4925-9136-3C1FAB9600EF}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\WindowsStoreContent\Views\BaseView.cs.pp = NuSpec\WindowsStoreContent\Views\BaseView.cs.pp
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
@@ -449,5 +470,9 @@ Global
 		{31885A1D-1804-4C39-94D3-1AC970EC62E8} = {C0577C10-B807-48CC-ABE8-FD8EB36A44FE}
 		{58BA42D4-E560-4D60-8463-5F52E3023E8D} = {ED1A2C71-EE78-4C0C-B7C7-49E3EB7DEE9A}
 		{02EC6EEA-5EAA-43A0-97C2-7E77F97B7FCB} = {C0577C10-B807-48CC-ABE8-FD8EB36A44FE}
+		{E3E045B2-1B97-40FC-B51C-2805AF1C3E38} = {8BA26B31-B8C6-4D22-A790-CA97AC266D42}
+		{7310F1A8-126E-4D96-86C3-26F7D4ADE024} = {E3E045B2-1B97-40FC-B51C-2805AF1C3E38}
+		{20EDF964-4269-47C0-AFB0-B4186C1ABA59} = {E3E045B2-1B97-40FC-B51C-2805AF1C3E38}
+		{3A090F72-724E-4925-9136-3C1FAB9600EF} = {E3E045B2-1B97-40FC-B51C-2805AF1C3E38}
 	EndGlobalSection
 EndGlobal

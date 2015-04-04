@@ -1,0 +1,23 @@
+1. Into the OnLaunched method of the App class, add:
+
+                Xamarin.Forms.Forms.Init(args);
+
+		before:
+
+		if (args.PreviousExecutionState == ApplicationExecutionState.Terminated)
+
+
+2. Into the Setup class, add:
+
+        protected override IMvxWindowsViewPresenter CreateViewPresenter(IMvxWindowsFrame rootFrame)
+        {
+            var presenter = new MvxFormsWindowsStoreViewPresenter(new MvxFormsApp(), rootFrame);
+            Mvx.RegisterSingleton<IMvxViewPresenter>(presenter);
+
+            return presenter;
+        }
+        
+        
+3. You can now delete no more needed files like all views except BaseView.cs
+
+4. Enjoy! :)
