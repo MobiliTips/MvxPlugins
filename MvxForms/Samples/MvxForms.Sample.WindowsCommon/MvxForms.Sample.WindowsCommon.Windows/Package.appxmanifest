@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+  <Identity Name="1eea1cfd-0dd7-4792-af34-e3685ccd1760" Publisher="CN=Jeremy" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>MvxForms.Sample.WindowsCommon.Windows</DisplayName>
+    <PublisherDisplayName>Jeremy</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.0</OSMinVersion>
+    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="MobiliTips.MvxPlugins.MvxForms.Sample.WindowsCommon.Windows.App">
+      <m2:VisualElements DisplayName="MobiliTips.MvxPlugins.MvxForms.Sample.WindowsCommon.Windows" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="MobiliTips.MvxPlugins.MvxForms.Sample.WindowsCommon.Windows" ForegroundText="light" BackgroundColor="#464646">
+        <m2:SplashScreen Image="Assets\SplashScreen.png" />
+      </m2:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
