@@ -1,6 +1,6 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <summary>
-//    Defines the MvxFormsWindowsCommonViewPresenter type.
+//    Defines the MvxFormsWindowsPhoneViewPresenter type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -10,15 +10,15 @@ using Xamarin.Forms;
 namespace $rootnamespace$.Presenters
 {
     /// <summary>
-    /// Defines the MvxFormsWindowsCommonViewPresenter type.
+    /// Defines the MvxFormsWindowsPhoneViewPresenter type.
     /// </summary>
-    public class MvxFormsWindowsCommonViewPresenter
+    public class MvxFormsWindowsPhoneViewPresenter
         : MvxFormsBaseViewPresenter
         , IMvxWindowsViewPresenter
     {
         private readonly IMvxWindowsFrame _rootFrame;
 
-        public MvxFormsWindowsCommonViewPresenter(MvxFormsApp mvxFormsApp, IMvxWindowsFrame rootFrame, string viewSuffix = "View")
+        public MvxFormsWindowsPhoneViewPresenter(MvxFormsApp mvxFormsApp, IMvxWindowsFrame rootFrame, string viewSuffix = "View")
             : base(mvxFormsApp, viewSuffix)
         {
             _rootFrame = rootFrame;

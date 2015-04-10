@@ -15,7 +15,7 @@ namespace MobiliTips.MvxPlugins.MvxForms.Sample.WindowsCommon
         {
             this.InitializeComponent();
 
-            var presenter = Mvx.Resolve<IMvxViewPresenter>() as MvxFormsWindowsCommonViewPresenter;
+            var presenter = Mvx.Resolve<IMvxViewPresenter>() as MvxFormsWindowsStoreViewPresenter;
             if (presenter == null) return;
 
             LoadApplication(presenter.MvxFormsApp);

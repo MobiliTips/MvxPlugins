@@ -102,11 +102,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Views", "Views", "{F2C98CA5
 		NuSpec\WinPhoneContent\Views\BaseView.cs.pp = NuSpec\WinPhoneContent\Views\BaseView.cs.pp
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presenters", "Presenters", "{38219EA8-BA4F-46F1-9DDC-2AD17D7EF39F}"
-	ProjectSection(SolutionItems) = preProject
-		NuSpec\WindowsCommonContent\Presenters\MvxFormsWindowsCommonViewPresenter.cs.pp = NuSpec\WindowsCommonContent\Presenters\MvxFormsWindowsCommonViewPresenter.cs.pp
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Views", "Views", "{9E17284D-2D54-4283-8104-746DA6F97B0A}"
 	ProjectSection(SolutionItems) = preProject
 		NuSpec\WindowsCommonContent\Views\BaseView.cs.pp = NuSpec\WindowsCommonContent\Views\BaseView.cs.pp
@@ -124,9 +119,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinStoreContent", "WinStore
 		NuSpec\WindowsCommonContent\WinStoreContent\MainPage.xaml.pp = NuSpec\WindowsCommonContent\WinStoreContent\MainPage.xaml.pp
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxForms", "ToDo-MvxForms", "{96935912-3FE6-4B8A-8BC2-555D2AF9E4C4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presenters", "Presenters", "{28657534-997B-4353-9B93-724DFACC7EBB}"
 	ProjectSection(SolutionItems) = preProject
-		NuSpec\WindowsCommonContent\ToDo-MvxForms\_ WinCom Setup.txt = NuSpec\WindowsCommonContent\ToDo-MvxForms\_ WinCom Setup.txt
+		NuSpec\WindowsCommonContent\WinPhoneContent\Presenters\MvxFormsWindowsPhoneViewPresenter.cs.pp = NuSpec\WindowsCommonContent\WinPhoneContent\Presenters\MvxFormsWindowsPhoneViewPresenter.cs.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxForms", "ToDo-MvxForms", "{AEC4DC71-C7C4-4B36-BF73-103922EAC4F8}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\WindowsCommonContent\WinPhoneContent\ToDo-MvxForms\_ WinPhone Setup.txt = NuSpec\WindowsCommonContent\WinPhoneContent\ToDo-MvxForms\_ WinPhone Setup.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presenters", "Presenters", "{510ABAE4-D3CE-4C34-899B-E1D0D5920C86}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\WindowsCommonContent\WinStoreContent\Presenters\MvxFormsWindowsStoreViewPresenter.cs.pp = NuSpec\WindowsCommonContent\WinStoreContent\Presenters\MvxFormsWindowsStoreViewPresenter.cs.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxForms", "ToDo-MvxForms", "{6C34F882-C8F6-4027-A276-C4D93F06F709}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\WindowsCommonContent\WinStoreContent\ToDo-MvxForms\_ WinStore Setup.txt = NuSpec\WindowsCommonContent\WinStoreContent\ToDo-MvxForms\_ WinStore Setup.txt
 	EndProjectSection
 EndProject
 Global
@@ -539,10 +549,12 @@ Global
 		{A3A9A42D-4A79-42A0-A10C-9AFFC639EC7C} = {2A614FEB-0E04-4C71-9AAB-6A8D39AE319C}
 		{063A1F09-77CC-4E2B-BBAA-31F730A77087} = {2A614FEB-0E04-4C71-9AAB-6A8D39AE319C}
 		{F2C98CA5-78F6-4318-9DF2-A77B7ABEA6CA} = {2A614FEB-0E04-4C71-9AAB-6A8D39AE319C}
-		{38219EA8-BA4F-46F1-9DDC-2AD17D7EF39F} = {6320DC0F-BDB4-4305-B4E8-2118EEF637AC}
 		{9E17284D-2D54-4283-8104-746DA6F97B0A} = {6320DC0F-BDB4-4305-B4E8-2118EEF637AC}
 		{7D0D53CB-971E-4411-A725-B8F52C6019F7} = {6320DC0F-BDB4-4305-B4E8-2118EEF637AC}
 		{51155BDB-52F0-46BA-8A4F-71F9D8CCFA95} = {6320DC0F-BDB4-4305-B4E8-2118EEF637AC}
-		{96935912-3FE6-4B8A-8BC2-555D2AF9E4C4} = {6320DC0F-BDB4-4305-B4E8-2118EEF637AC}
+		{28657534-997B-4353-9B93-724DFACC7EBB} = {7D0D53CB-971E-4411-A725-B8F52C6019F7}
+		{AEC4DC71-C7C4-4B36-BF73-103922EAC4F8} = {7D0D53CB-971E-4411-A725-B8F52C6019F7}
+		{510ABAE4-D3CE-4C34-899B-E1D0D5920C86} = {51155BDB-52F0-46BA-8A4F-71F9D8CCFA95}
+		{6C34F882-C8F6-4027-A276-C4D93F06F709} = {51155BDB-52F0-46BA-8A4F-71F9D8CCFA95}
 	EndGlobalSection
 EndGlobal

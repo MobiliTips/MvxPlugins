@@ -27,7 +27,7 @@ namespace MobiliTips.MvxPlugins.MvxForms.Sample.WindowsCommon
 
         protected override IMvxWindowsViewPresenter CreateViewPresenter(IMvxWindowsFrame rootFrame)
         {
-            var presenter = new MvxFormsWindowsCommonViewPresenter(new MvxFormsApp(), rootFrame);
+            var presenter = new MvxFormsWindowsStoreViewPresenter(new MvxFormsApp(), rootFrame);
             Mvx.RegisterSingleton<IMvxViewPresenter>(presenter);
 
             return presenter;

@@ -15,7 +15,7 @@ namespace $rootnamespace$
         {
             this.InitializeComponent();
 
-            var presenter = Mvx.Resolve<IMvxViewPresenter>() as MvxFormsWindowsCommonViewPresenter;
+            var presenter = Mvx.Resolve<IMvxViewPresenter>() as MvxFormsWindowsPhoneViewPresenter;
             if (presenter == null) return;
 
             LoadApplication(presenter.MvxFormsApp);

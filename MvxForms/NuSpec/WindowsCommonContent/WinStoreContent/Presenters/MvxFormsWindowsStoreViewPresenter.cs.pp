@@ -1,24 +1,24 @@
 // --------------------------------------------------------------------------------------------------------------------
 // <summary>
-//    Defines the MvxFormsWindowsCommonViewPresenter type.
+//    Defines the MvxFormsWindowsStoreViewPresenter type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 using Cirrious.MvvmCross.WindowsCommon.Views;
 using Xamarin.Forms;
 
-namespace MobiliTips.MvxPlugins.MvxForms.Sample.WindowsCommon.Presenters
+namespace $rootnamespace$.Presenters
 {
     /// <summary>
-    /// Defines the MvxFormsWindowsCommonViewPresenter type.
+    /// Defines the MvxFormsWindowsStoreViewPresenter type.
     /// </summary>
-    public class MvxFormsWindowsCommonViewPresenter
+    public class MvxFormsWindowsStoreViewPresenter
         : MvxFormsBaseViewPresenter
         , IMvxWindowsViewPresenter
     {
         private readonly IMvxWindowsFrame _rootFrame;
 
-        public MvxFormsWindowsCommonViewPresenter(MvxFormsApp mvxFormsApp, IMvxWindowsFrame rootFrame, string viewSuffix = "View")
+        public MvxFormsWindowsStoreViewPresenter(MvxFormsApp mvxFormsApp, IMvxWindowsFrame rootFrame, string viewSuffix = "View")
             : base(mvxFormsApp, viewSuffix)
         {
             _rootFrame = rootFrame;
