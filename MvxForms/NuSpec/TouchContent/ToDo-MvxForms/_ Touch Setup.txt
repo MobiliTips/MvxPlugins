@@ -1,0 +1,15 @@
+1. Into the Setup class, add:
+
+        protected override IMvxTouchViewPresenter CreatePresenter()
+        {
+            Forms.Init();
+
+            var presenter = new MvxFormsTouchViewPresenter(new MvxFormsApp(), Window);
+            Mvx.RegisterSingleton<IMvxViewPresenter>(presenter);
+
+            return presenter;
+        }
+
+2. You can now remove no more needed files like all views except BaseView.cs
+		
+3. Enjoy! :)

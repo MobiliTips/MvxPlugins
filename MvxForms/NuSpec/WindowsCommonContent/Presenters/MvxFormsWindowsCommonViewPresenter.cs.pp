@@ -7,7 +7,7 @@
 using Cirrious.MvvmCross.WindowsCommon.Views;
 using Xamarin.Forms;
 
-namespace MobiliTips.MvxPlugins.MvxForms.Sample.WindowsCommon.Presenters
+namespace $rootnamespace$.Presenters
 {
     /// <summary>
     /// Defines the MvxFormsWindowsCommonViewPresenter type.

@@ -1,0 +1,16 @@
+1. Into the Setup class, add:
+
+        protected override IMvxPhoneViewPresenter CreateViewPresenter(PhoneApplicationFrame rootFrame)
+        {
+            Forms.Init();
+
+            var presenter = new MvxFormsWindowsPhoneViewPresenter(new MvxFormsApp(), rootFrame);
+            Mvx.RegisterSingleton<IMvxViewPresenter>(presenter);
+
+            return presenter;
+        }
+        
+        
+2. You can now delete no more needed files like all views except BaseView.cs
+
+3. Enjoy! :)

@@ -23,6 +23,112 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvxForms.Sample.Droid", "Sa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvxForms.Sample.iOS", "Samples\MvxForms.Sample.iOS\MvxForms.Sample.iOS.csproj", "{6DE5F0B1-1098-419F-9F81-BE8567E00917}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuSpec", "NuSpec", "{0A822644-36AA-40DF-AC7C-6C65A9AEBE02}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\MobiliTips.MvxPlugins.MvxForms.nuspec = NuSpec\MobiliTips.MvxPlugins.MvxForms.nuspec
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoreContent", "CoreContent", "{B09D9806-16FD-4D0E-9937-93E536DE6FA3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DroidContent", "DroidContent", "{FD121343-F347-40CE-BF66-48B069D05055}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\DroidContent\MvxFormsApplicationMainActivity.cs.pp = NuSpec\DroidContent\MvxFormsApplicationMainActivity.cs.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TouchContent", "TouchContent", "{87A1C0DD-C6BD-4DFD-BC84-3104872D08F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinPhoneContent", "WinPhoneContent", "{2A614FEB-0E04-4C71-9AAB-6A8D39AE319C}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\WinPhoneContent\MainPage.xaml.cs.pp = NuSpec\WinPhoneContent\MainPage.xaml.cs.pp
+		NuSpec\WinPhoneContent\MainPage.xaml.pp = NuSpec\WinPhoneContent\MainPage.xaml.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WindowsCommonContent", "WindowsCommonContent", "{6320DC0F-BDB4-4305-B4E8-2118EEF637AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ViewModels", "ViewModels", "{B59BA6D7-40CF-4324-AF3A-C17B5B4F0AA9}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\CoreContent\ViewModels\BaseViewModel.cs.pp = NuSpec\CoreContent\ViewModels\BaseViewModel.cs.pp
+		NuSpec\CoreContent\ViewModels\FirstViewModel.cs.pp = NuSpec\CoreContent\ViewModels\FirstViewModel.cs.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Views", "Views", "{C1ADACA2-0109-444B-929C-C5C7D3FA6828}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\CoreContent\Views\FirstView.xaml.cs.pp = NuSpec\CoreContent\Views\FirstView.xaml.cs.pp
+		NuSpec\CoreContent\Views\FirstView.xaml.pp = NuSpec\CoreContent\Views\FirstView.xaml.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presenters", "Presenters", "{40E6B3D6-D2CF-4550-B7DB-208E158C1F5C}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\DroidContent\Presenters\MvxFormsAndroidViewPresenter.cs.pp = NuSpec\DroidContent\Presenters\MvxFormsAndroidViewPresenter.cs.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxForms", "ToDo-MvxForms", "{55654760-73F3-4C99-890A-238C3AF87030}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\DroidContent\ToDo-MvxForms\_ Droid Setup.txt = NuSpec\DroidContent\ToDo-MvxForms\_ Droid Setup.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Views", "Views", "{DA90198F-ECF2-4FAB-A184-A744570E2E62}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\DroidContent\Views\BaseView.cs.pp = NuSpec\DroidContent\Views\BaseView.cs.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presenters", "Presenters", "{D452D2C5-5D7A-4DA3-AD1E-03C33D8380A6}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\TouchContent\Presenters\MvxFormsTouchViewPresenter.cs.pp = NuSpec\TouchContent\Presenters\MvxFormsTouchViewPresenter.cs.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxForms", "ToDo-MvxForms", "{E2677D2C-CD2C-4358-937E-B69BCC0D8020}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\TouchContent\ToDo-MvxForms\_ Touch Setup.txt = NuSpec\TouchContent\ToDo-MvxForms\_ Touch Setup.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Views", "Views", "{D26EFE72-B384-4332-B148-D0B26BAFEC60}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\TouchContent\Views\BaseView.cs.pp = NuSpec\TouchContent\Views\BaseView.cs.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presenters", "Presenters", "{A3A9A42D-4A79-42A0-A10C-9AFFC639EC7C}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\WinPhoneContent\Presenters\MvxFormsWindowsPhoneViewPresenter.cs.pp = NuSpec\WinPhoneContent\Presenters\MvxFormsWindowsPhoneViewPresenter.cs.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxForms", "ToDo-MvxForms", "{063A1F09-77CC-4E2B-BBAA-31F730A77087}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\WinPhoneContent\ToDo-MvxForms\_ WinPhone Setup.txt = NuSpec\WinPhoneContent\ToDo-MvxForms\_ WinPhone Setup.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Views", "Views", "{F2C98CA5-78F6-4318-9DF2-A77B7ABEA6CA}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\WinPhoneContent\Views\BaseView.cs.pp = NuSpec\WinPhoneContent\Views\BaseView.cs.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presenters", "Presenters", "{38219EA8-BA4F-46F1-9DDC-2AD17D7EF39F}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\WindowsCommonContent\Presenters\MvxFormsWindowsCommonViewPresenter.cs.pp = NuSpec\WindowsCommonContent\Presenters\MvxFormsWindowsCommonViewPresenter.cs.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Views", "Views", "{9E17284D-2D54-4283-8104-746DA6F97B0A}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\WindowsCommonContent\Views\BaseView.cs.pp = NuSpec\WindowsCommonContent\Views\BaseView.cs.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinPhoneContent", "WinPhoneContent", "{7D0D53CB-971E-4411-A725-B8F52C6019F7}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\WindowsCommonContent\WinPhoneContent\MainPage.xaml.cs.pp = NuSpec\WindowsCommonContent\WinPhoneContent\MainPage.xaml.cs.pp
+		NuSpec\WindowsCommonContent\WinPhoneContent\MainPage.xaml.pp = NuSpec\WindowsCommonContent\WinPhoneContent\MainPage.xaml.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinStoreContent", "WinStoreContent", "{51155BDB-52F0-46BA-8A4F-71F9D8CCFA95}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\WindowsCommonContent\WinStoreContent\MainPage.xaml.cs.pp = NuSpec\WindowsCommonContent\WinStoreContent\MainPage.xaml.cs.pp
+		NuSpec\WindowsCommonContent\WinStoreContent\MainPage.xaml.pp = NuSpec\WindowsCommonContent\WinStoreContent\MainPage.xaml.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxForms", "ToDo-MvxForms", "{96935912-3FE6-4B8A-8BC2-555D2AF9E4C4}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\WindowsCommonContent\ToDo-MvxForms\_ WinCom Setup.txt = NuSpec\WindowsCommonContent\ToDo-MvxForms\_ WinCom Setup.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Samples\MvxForms.Sample.WindowsCommon\MvxForms.Sample.WindowsCommon.Shared\MvxForms.Sample.WindowsCommon.Shared.projitems*{c4d43514-78d8-49be-a479-1c77098cf68e}*SharedItemsImports = 4
@@ -417,5 +523,26 @@ Global
 		{C4E5B843-F043-4A74-8080-35E291A9C652} = {56E839F9-9C81-4123-8700-BB680982235E}
 		{D993FB18-56F8-4E56-83B0-31BD1CCAF5D5} = {73F0C09B-31AA-4AE3-9427-D0E9090EE7A6}
 		{6DE5F0B1-1098-419F-9F81-BE8567E00917} = {73F0C09B-31AA-4AE3-9427-D0E9090EE7A6}
+		{B09D9806-16FD-4D0E-9937-93E536DE6FA3} = {0A822644-36AA-40DF-AC7C-6C65A9AEBE02}
+		{FD121343-F347-40CE-BF66-48B069D05055} = {0A822644-36AA-40DF-AC7C-6C65A9AEBE02}
+		{87A1C0DD-C6BD-4DFD-BC84-3104872D08F1} = {0A822644-36AA-40DF-AC7C-6C65A9AEBE02}
+		{2A614FEB-0E04-4C71-9AAB-6A8D39AE319C} = {0A822644-36AA-40DF-AC7C-6C65A9AEBE02}
+		{6320DC0F-BDB4-4305-B4E8-2118EEF637AC} = {0A822644-36AA-40DF-AC7C-6C65A9AEBE02}
+		{B59BA6D7-40CF-4324-AF3A-C17B5B4F0AA9} = {B09D9806-16FD-4D0E-9937-93E536DE6FA3}
+		{C1ADACA2-0109-444B-929C-C5C7D3FA6828} = {B09D9806-16FD-4D0E-9937-93E536DE6FA3}
+		{40E6B3D6-D2CF-4550-B7DB-208E158C1F5C} = {FD121343-F347-40CE-BF66-48B069D05055}
+		{55654760-73F3-4C99-890A-238C3AF87030} = {FD121343-F347-40CE-BF66-48B069D05055}
+		{DA90198F-ECF2-4FAB-A184-A744570E2E62} = {FD121343-F347-40CE-BF66-48B069D05055}
+		{D452D2C5-5D7A-4DA3-AD1E-03C33D8380A6} = {87A1C0DD-C6BD-4DFD-BC84-3104872D08F1}
+		{E2677D2C-CD2C-4358-937E-B69BCC0D8020} = {87A1C0DD-C6BD-4DFD-BC84-3104872D08F1}
+		{D26EFE72-B384-4332-B148-D0B26BAFEC60} = {87A1C0DD-C6BD-4DFD-BC84-3104872D08F1}
+		{A3A9A42D-4A79-42A0-A10C-9AFFC639EC7C} = {2A614FEB-0E04-4C71-9AAB-6A8D39AE319C}
+		{063A1F09-77CC-4E2B-BBAA-31F730A77087} = {2A614FEB-0E04-4C71-9AAB-6A8D39AE319C}
+		{F2C98CA5-78F6-4318-9DF2-A77B7ABEA6CA} = {2A614FEB-0E04-4C71-9AAB-6A8D39AE319C}
+		{38219EA8-BA4F-46F1-9DDC-2AD17D7EF39F} = {6320DC0F-BDB4-4305-B4E8-2118EEF637AC}
+		{9E17284D-2D54-4283-8104-746DA6F97B0A} = {6320DC0F-BDB4-4305-B4E8-2118EEF637AC}
+		{7D0D53CB-971E-4411-A725-B8F52C6019F7} = {6320DC0F-BDB4-4305-B4E8-2118EEF637AC}
+		{51155BDB-52F0-46BA-8A4F-71F9D8CCFA95} = {6320DC0F-BDB4-4305-B4E8-2118EEF637AC}
+		{96935912-3FE6-4B8A-8BC2-555D2AF9E4C4} = {6320DC0F-BDB4-4305-B4E8-2118EEF637AC}
 	EndGlobalSection
 EndGlobal
