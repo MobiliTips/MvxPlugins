@@ -7,6 +7,11 @@
 		// Init Xamarin Forms
 		Forms.Init(e);
 
+	with references:
+
+		using Xamarin.Forms;
+		using NavigationEventArgs = Windows.UI.Xaml.Navigation.NavigationEventArgs;
+
 2. Into the Setup class, add:
 
         protected override IMvxWindowsViewPresenter CreateViewPresenter(IMvxWindowsFrame rootFrame)

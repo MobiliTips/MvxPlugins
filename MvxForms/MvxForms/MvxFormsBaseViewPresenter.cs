@@ -13,9 +13,9 @@ namespace MobiliTips.MvxPlugins.MvxForms
         : IMvxViewPresenter
     {
         private readonly string _viewSuffix;
-        public readonly Application MvxFormsApp;
+        public readonly MvxFormsApp MvxFormsApp;
 
-        protected MvxFormsBaseViewPresenter(Application mvxFormsApp, string viewSuffix = "View")
+        protected MvxFormsBaseViewPresenter(MvxFormsApp mvxFormsApp, string viewSuffix = "View")
         {
             MvxFormsApp = mvxFormsApp;
             _viewSuffix = viewSuffix;

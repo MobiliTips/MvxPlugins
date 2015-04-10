@@ -6,6 +6,7 @@
 
 using Cirrious.MvvmCross.WindowsCommon.Views;
 using Xamarin.Forms;
+using MobiliTips.MvxPlugins.MvxForms;
 
 namespace $rootnamespace$.Presenters
 {
