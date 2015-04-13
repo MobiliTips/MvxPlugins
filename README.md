@@ -9,7 +9,7 @@ Install the plugin and follow the "ToDo - MvxForms" instuctions on each platform
 
 ### Use
 You can work either with Xaml or cs views, it doens't matter.
-By default, the plugin will look for views with "View" suffix but anyway, you can tell the plugin to work with your own suffix (like "Page" as many prefer) by writing it into the presenter initialization (Setup file) like that (example for Android but the same for iOS or WinPhone):
+By default, the plugin will look for views with "View" suffix but anyway, you can tell the plugin to work with your own suffix (like "Page" as many prefer) by writing it into the presenter initialization (Setup file) like that (example for Android but the same for iOS, WinPhone or WinStore):
 
     var presenter = new MvxFormsAndroidViewPresenter(new MvxFormsApp(), "Page");
 
