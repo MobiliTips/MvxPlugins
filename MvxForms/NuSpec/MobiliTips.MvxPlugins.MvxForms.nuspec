@@ -1,50 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
     <metadata>
-        <id>MobiliTips.MvxPlugin.MvxForms</id>
-        <version>1.1.0</version>
+        <id>MobiliTips.MvxPlugins.MvxForms</id>
+        <version>1.2.0-beta2</version>
         <title>MvvmCross - Xamarin Forms plugin</title>
         <authors>Jeremy BRUN-PICARD</authors>
         <owners>MobiliTips</owners>
         <licenseUrl>https://github.com/MobiliTips/MvxPlugins/blob/master/LICENSE</licenseUrl>
-        <projectUrl>https://github.com/MobiliTips/MvxPlugins/tree/master/MobiliTips.MvxPlugin.MvxForms</projectUrl>
+        <projectUrl>https://github.com/MobiliTips/MvxPlugins</projectUrl>
+        <iconUrl>https://raw.githubusercontent.com/MobiliTips/MvxPlugins/master/Icon.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>MvvmCross plugin to work with Xamarin Forms.
+        <description>MvvmCross plugin to work with Xamarin Forms on iOS, Android, WinPhone SL, WinStore 8.1 &amp; WinPhone 8.1 projects.
 
-Install this plugin on a blank MvvmCross project (each platform) without any customization so that you can click "Yes to all" on overriding alert message. Otherwise, see sample on Github.
+Install this plugin on a blank MvvmCross project (each platform) without any customization so that you can click "Yes to all" on overriding alert message. If your project is not a blank one, click "No to all" and see sample on GitHub to implement it manually. 
 
-Release notes on nuget.org
+Tuto available on my blog http://mobilitips.wordpress.com
+Release notes on nuget.org 
 
 Inspired by FormsPresenters plugin with some adaptations.</description>
-        <releaseNotes>.Only 1 PCL lib left (no more platform specific)
-.No more Android API minimal requirement except the Xamarin.Forms one
-Vers 1.1.0:
-.MvxFormsBaseViewPresenter from the PCL now implemented as cs class files on each target project so that it's now possible to customize the presenter (eg login process)</releaseNotes>
+        <summary>MvvmCross plugin to work with Xamarin Forms on iOS, Android, WinPhone SL, WinStore 8.1 &amp; WinPhone 8.1 projects.</summary>
+        <releaseNotes>1.2.0-beta2:
+[New] Now Base presenter public methods like Show or ChangePresentation are virtual so that you can override it on each platform presenter
+[New] Forms.Init added to Android MvxFormsApplicationMainActivity</releaseNotes>
         <copyright>MobiliTips</copyright>
-        <tags>mvvmcross, xamarin, forms, xamarin.forms, mvxforms, mvx, mvvmcross</tags>
+        <tags>mvvmcross xamarin forms xamarin.forms mvxforms mvx</tags>
         <dependencies>
-            <dependency id="MvvmCross.HotTuna.MvvmCrossLibraries" version="3.5.0" />
-            <dependency id="Xamarin.Forms" version="1.4.0.6341" />
+            <group>
+                <dependency id="MvvmCross.HotTuna.MvvmCrossLibraries" version="3.5.0" />
+                <dependency id="Xamarin.Forms" version="1.4.2.6353-pre2" />
+            </group>
+            <group targetFramework=".NETPortable0.0-win+win81+wpa81">
+                <dependency id="MvvmCross.HotTuna.MvvmCrossLibraries" version="3.5.0" />
+                <dependency id="Xamarin.Forms.Windows" version="1.4.2.6353-pre2" />
+            </group>
         </dependencies>
     </metadata>
     <files>
         <file src="content\MonoAndroid\Presenters\MvxFormsAndroidViewPresenter.cs.pp" target="content\MonoAndroid\Presenters\MvxFormsAndroidViewPresenter.cs.pp" />
         <file src="DroidContent\ToDo-MvxForms\_ Droid Setup.txt" target="content\MonoAndroid\ToDo-MvxForms\_ Droid Setup.txt" />
         <file src="content\MonoAndroid\Views\BaseView.cs.pp" target="content\MonoAndroid\Views\BaseView.cs.pp" />
-        <file src="content\MonoAndroid\MvxFormsApplicationMainActivity.cs.pp" target="content\MonoAndroid\MvxFormsApplicationMainActivity.cs.pp" />
-        <file src="content\portable-net45+netcore45+wp8+MonoAndroid10+Xamarin.iOS10\ViewModels\BaseViewModel.cs.pp" target="content\portable-net45+netcore45+wp8+MonoAndroid10+Xamarin.iOS10\ViewModels\BaseViewModel.cs.pp" />
-        <file src="content\portable-net45+netcore45+wp8+MonoAndroid10+Xamarin.iOS10\ViewModels\FirstViewModel.cs.pp" target="content\portable-net45+netcore45+wp8+MonoAndroid10+Xamarin.iOS10\ViewModels\FirstViewModel.cs.pp" />
-        <file src="content\portable-net45+netcore45+wp8+MonoAndroid10+Xamarin.iOS10\Views\FirstView.xaml.cs.pp" target="content\portable-net45+netcore45+wp8+MonoAndroid10+Xamarin.iOS10\Views\FirstView.xaml.cs.pp" />
-        <file src="content\portable-net45+netcore45+wp8+MonoAndroid10+Xamarin.iOS10\Views\FirstView.xaml.pp" target="content\portable-net45+netcore45+wp8+MonoAndroid10+Xamarin.iOS10\Views\FirstView.xaml.pp" />
+        <file src="DroidContent\MvxFormsApplicationMainActivity.cs.pp" target="content\MonoAndroid\MvxFormsApplicationMainActivity.cs.pp" />
+        <file src="content\portable-win+net45+wp8+win8+wpa81+MonoAndroid10+Xamarin.iOS10\ViewModels\BaseViewModel.cs.pp" target="content\portable-win+net45+wp8+win8+wpa81+MonoAndroid10+Xamarin.iOS10\ViewModels\BaseViewModel.cs.pp" />
+        <file src="content\portable-win+net45+wp8+win8+wpa81+MonoAndroid10+Xamarin.iOS10\ViewModels\FirstViewModel.cs.pp" target="content\portable-win+net45+wp8+win8+wpa81+MonoAndroid10+Xamarin.iOS10\ViewModels\FirstViewModel.cs.pp" />
+        <file src="content\portable-win+net45+wp8+win8+wpa81+MonoAndroid10+Xamarin.iOS10\Views\FirstView.xaml.cs.pp" target="content\portable-win+net45+wp8+win8+wpa81+MonoAndroid10+Xamarin.iOS10\Views\FirstView.xaml.cs.pp" />
+        <file src="content\portable-win+net45+wp8+win8+wpa81+MonoAndroid10+Xamarin.iOS10\Views\FirstView.xaml.pp" target="content\portable-win+net45+wp8+win8+wpa81+MonoAndroid10+Xamarin.iOS10\Views\FirstView.xaml.pp" />
+        <file src="content\win81\Presenters\MvxFormsWindowsStoreViewPresenter.cs.pp" target="content\win81\Presenters\MvxFormsWindowsStoreViewPresenter.cs.pp" />
+        <file src="WindowsCommonContent\WinStoreContent\ToDo-MvxForms\_ WinStore Setup.txt" target="content\win81\ToDo-MvxForms\_ WinStore Setup.txt" />
+        <file src="content\win81\Views\BaseView.cs.pp" target="content\win81\Views\BaseView.cs.pp" />
+        <file src="content\win81\MainPage.xaml.cs.pp" target="content\win81\MainPage.xaml.cs.pp" />
+        <file src="content\win81\MainPage.xaml.pp" target="content\win81\MainPage.xaml.pp" />
         <file src="content\wp8\Presenters\MvxFormsWindowsPhoneViewPresenter.cs.pp" target="content\wp8\Presenters\MvxFormsWindowsPhoneViewPresenter.cs.pp" />
-        <file src="WindowsPhoneContent\ToDo-MvxForms\_ WinPhone Setup.txt" target="content\wp8\ToDo-MvxForms\_ WinPhone Setup.txt" />
+        <file src="WinPhoneContent\ToDo-MvxForms\_ WinPhone Setup.txt" target="content\wp8\ToDo-MvxForms\_ WinPhone Setup.txt" />
         <file src="content\wp8\Views\BaseView.cs.pp" target="content\wp8\Views\BaseView.cs.pp" />
         <file src="content\wp8\MainPage.xaml.cs.pp" target="content\wp8\MainPage.xaml.cs.pp" />
         <file src="content\wp8\MainPage.xaml.pp" target="content\wp8\MainPage.xaml.pp" />
+        <file src="content\wpa81\Presenters\MvxFormsWindowsPhoneViewPresenter.cs.pp" target="content\wpa81\Presenters\MvxFormsWindowsPhoneViewPresenter.cs.pp" />
+        <file src="WindowsCommonContent\WinPhoneContent\ToDo-MvxForms\_ WinPhone Setup.txt" target="content\wpa81\ToDo-MvxForms\_ WinPhone Setup.txt" />
+        <file src="content\wpa81\Views\BaseView.cs.pp" target="content\wpa81\Views\BaseView.cs.pp" />
+        <file src="content\wpa81\MainPage.xaml.cs.pp" target="content\wpa81\MainPage.xaml.cs.pp" />
+        <file src="content\wpa81\MainPage.xaml.pp" target="content\wpa81\MainPage.xaml.pp" />
         <file src="content\Xamarin.iOS10\Presenters\MvxFormsTouchViewPresenter.cs.pp" target="content\Xamarin.iOS10\Presenters\MvxFormsTouchViewPresenter.cs.pp" />
         <file src="TouchContent\ToDo-MvxForms\_ Touch Setup.txt" target="content\Xamarin.iOS10\ToDo-MvxForms\_ Touch Setup.txt" />
         <file src="content\Xamarin.iOS10\Views\BaseView.cs.pp" target="content\Xamarin.iOS10\Views\BaseView.cs.pp" />
-        <file src="lib\portable-net45+netcore45+wp8+MonoAndroid10+Xamarin.iOS10\MobiliTips.MvxPlugin.MvxForms.dll" target="lib\portable-net45+netcore45+wp8+MonoAndroid10+Xamarin.iOS10\MobiliTips.MvxPlugin.MvxForms.dll" />
-        <file src="tools\portable-net45+netcore45+wp8+MonoAndroid10+Xamarin.iOS10\install.ps1" target="tools\portable-net45+netcore45+wp8+MonoAndroid10+Xamarin.iOS10\install.ps1" />
+        <file src="..\MvxForms\bin\Debug\MobiliTips.MvxPlugins.MvxForms.dll" target="lib\portable-win+net45+wp8+win8+wpa81+MonoAndroid10+Xamarin.iOS10\MobiliTips.MvxPlugins.MvxForms.dll" />
+        <file src="tools\portable-win+net45+wp8+win8+wpa81+MonoAndroid10+Xamarin.iOS10\install.ps1" target="tools\portable-win+net45+wp8+win8+wpa81+MonoAndroid10+Xamarin.iOS10\install.ps1" />
     </files>
 </package>

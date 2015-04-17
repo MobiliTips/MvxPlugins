@@ -4,6 +4,7 @@ using Cirrious.CrossCore;
 using Cirrious.MvvmCross.ViewModels;
 using Cirrious.MvvmCross.Views;
 using $rootnamespace$.Presenters;
+using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 namespace $rootnamespace$
@@ -15,6 +16,8 @@ namespace $rootnamespace$
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+
+            Forms.Init(this, bundle);
 
             var presenter = Mvx.Resolve<IMvxViewPresenter>() as MvxFormsAndroidViewPresenter;
             if (presenter == null) return;

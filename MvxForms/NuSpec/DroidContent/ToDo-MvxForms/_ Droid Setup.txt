@@ -34,4 +34,11 @@
 
 3. You can now remove no more used files like MainActivity.cs, all views except BaseView.cs and all .axml layout files except SplashScreen.axml
 
-4. Enjoy! :)
+
+
+Enjoy!
+
+
+Tutorials on http://mobilitips.wordpress.com
+Project on http://www.github.com/MobiliTips
+Contact on Twitter @MobiliTips
