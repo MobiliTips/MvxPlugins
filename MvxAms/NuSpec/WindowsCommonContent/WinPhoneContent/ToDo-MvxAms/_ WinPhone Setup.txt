@@ -1,0 +1,19 @@
+1. Add plugin configuration into the Setup class:
+
+	protected override IMvxPluginConfiguration GetPluginConfiguration(Type plugin)
+        {
+            if (plugin == typeof (MobiliTips.MvxPlugins.MvxAms.WindowsPhoneStore.Plugin)) 
+                return new MvxAmsPluginConfiguration();
+
+            return base.GetPluginConfiguration(plugin);
+        }
+
+2. You can also override default values here with Windows Phone specific parameters
+(but leaving all at default should work. See online documentation for tutorials)
+
+Enjoy!
+
+
+Tutorials on http://mobilitips.wordpress.com
+Project on https://github.com/MobiliTips
+Contact on Twitter @MobiliTips

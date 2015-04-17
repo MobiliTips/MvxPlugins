@@ -1,0 +1,13 @@
+1. Update MvxAmsPluginConfiguration class with your Azure URL and Key
+
+2. Update/Create your Model classes so that they all inherit from EntityData abstract class 
+or ITableData if there's another parent class yet (see online documentation for tutorials)
+
+3. You can now resolve MvxAmsService from anywhere to use it (see online documentation for tutorials)
+
+Enjoy!
+
+
+Tutorials on http://mobilitips.wordpress.com
+Project on https://github.com/MobiliTips
+Contact on Twitter @MobiliTips

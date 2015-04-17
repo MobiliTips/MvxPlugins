@@ -40,5 +40,5 @@ Enjoy!
 
 
 Tutorials on http://mobilitips.wordpress.com
-Project on http://www.github.com/MobiliTips
+Project on https://github.com/MobiliTips
 Contact on Twitter @MobiliTips
