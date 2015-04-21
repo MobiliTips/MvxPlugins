@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Cirrious.CrossCore;
 using Microsoft.WindowsAzure.MobileServices;
 
 namespace MobiliTips.MvxPlugins.MvxAms.Data
@@ -8,13 +9,13 @@ namespace MobiliTips.MvxPlugins.MvxAms.Data
     public class MvxAmsRemoteTableService<T> : IMvxAmsRemoteTableService<T>
     {
         private readonly IMvxAmsPluginConfiguration _configuration;
-        private readonly MobileServiceClient _client;
+        private readonly IMobileServiceClient _client;
         private IMobileServiceTable<T> _remoteTable;
 
-        public MvxAmsRemoteTableService(IMvxAmsPluginConfiguration configuration, MobileServiceClient client)
+        public MvxAmsRemoteTableService()
         {
-            _configuration = configuration;
-            _client = client;
+            _configuration = Mvx.Resolve<IMvxAmsPluginConfiguration>();
+            _client = Mvx.Resolve<IMobileServiceClient>();
         }
 
         private async Task<bool> InitializeAsync()

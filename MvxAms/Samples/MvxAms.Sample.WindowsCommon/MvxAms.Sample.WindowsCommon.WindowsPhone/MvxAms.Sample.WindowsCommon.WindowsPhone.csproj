@@ -88,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrap\MvxAmsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\MvxAmsPluginLocalStoreExtensionBootstrap.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -195,6 +196,10 @@
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\MvxAms.LocalStore\MvxAms.LocalStore.csproj">
+      <Project>{3d49d528-ddfc-4a90-83f6-635b5d9dbfb0}</Project>
+      <Name>MvxAms.LocalStore</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\MvxAms.WindowsPhoneStore\MvxAms.WindowsPhoneStore.csproj">
       <Project>{ffc7d48c-20ef-4d1d-9180-bcf2e83d4222}</Project>
       <Name>MvxAms.WindowsPhoneStore</Name>

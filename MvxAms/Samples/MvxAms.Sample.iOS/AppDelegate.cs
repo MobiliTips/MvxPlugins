@@ -2,6 +2,7 @@
 using Cirrious.MvvmCross.Touch.Platform;
 using Cirrious.MvvmCross.ViewModels;
 using Foundation;
+using MobiliTips.MvxPlugins.MvxAms.Touch;
 using UIKit;
 
 namespace MvxAms.Sample.iOS
@@ -22,6 +23,8 @@ namespace MvxAms.Sample.iOS
             startup.Start();
 
             _window.MakeKeyAndVisible();
+
+            Mvx.RegisterSingleton<IMvxAmsTouchTopViewController>(new MvxAmsTouchTopViewController(_window.RootViewController));
 
             return true;
         }

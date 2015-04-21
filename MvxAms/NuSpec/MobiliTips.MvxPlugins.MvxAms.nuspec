@@ -12,7 +12,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Work with Azure Mobile Services thanks to MvvmCross framework with almost 1 line call to manage remote as local data, authenticate users or send custom API requests.
 
-This plugin has also been successfuly tested on a Xamarin.Forms project thanks to the MvxForms 1.2.0-beta2 plugin addition.
+This plugin has also been successfuly tested on a MvvmCross with Xamarin.Forms project thanks to MvxForms ≥ 1.2.0-beta2 plugin addition.
 
 Tuto available on http://mobilitips.wordpress.com
 Release notes on nuget.org
@@ -42,28 +42,28 @@ In other words, you wont be able to debug your app on the Windows Phone emulator
         </dependencies>
     </metadata>
     <files>
-        <file src="DroidContent\Bootstrap\MvxAmsPluginBootstrap.cs.pp" target="content\MonoAndroid\Bootstrap\MvxAmsPluginBootstrap.cs.pp" />
-        <file src="DroidContent\ToDo-MvxAms\_ Droid Setup.txt" target="content\MonoAndroid\ToDo-MvxAms\_ Droid Setup.txt" />
-        <file src="CoreContent\ToDo-MvxAms\_ Core Setup.txt" target="content\portable-win+net45+wp8+win8+wpa81+MonoAndroid10+Xamarin.iOS10\ToDo-MvxAms\_ Core Setup.txt" />
-        <file src="CoreContent\MvxAmsPluginConfiguration.cs.pp" target="content\portable-win+net45+wp8+win8+wpa81+MonoAndroid10+Xamarin.iOS10\MvxAmsPluginConfiguration.cs.pp" />
-        <file src="WindowsCommonContent\WinStoreContent\Bootstrap\MvxAmsPluginBootstrap.cs.pp" target="content\win81\Bootstrap\MvxAmsPluginBootstrap.cs.pp" />
-        <file src="WindowsCommonContent\WinStoreContent\ToDo-MvxAms\_ WinStore Setup.txt" target="content\win81\ToDo-MvxAms\_ WinStore Setup.txt" />
-        <file src="WinPhoneContent\Bootstrap\MvxAmsPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\MvxAmsPluginBootstrap.cs.pp" />
-        <file src="WinPhoneContent\ToDo-MvxAms\_ WinPhone Setup.txt" target="content\wp8\ToDo-MvxAms\_ WinPhone Setup.txt" />
-        <file src="WindowsCommonContent\WinPhoneContent\Bootstrap\MvxAmsPluginBootstrap.cs.pp" target="content\wpa81\Bootstrap\MvxAmsPluginBootstrap.cs.pp" />
-        <file src="WindowsCommonContent\WinPhoneContent\ToDo-MvxAms\_ WinPhone Setup.txt" target="content\wpa81\ToDo-MvxAms\_ WinPhone Setup.txt" />
-        <file src="TouchContent\Bootstrap\MvxAmsPluginBootstrap.cs.pp" target="content\Xamarin.iOS10\Bootstrap\MvxAmsPluginBootstrap.cs.pp" />
-        <file src="TouchContent\ToDo-MvxAms\_ Touch Setup.txt" target="content\Xamarin.iOS10\ToDo-MvxAms\_ Touch Setup.txt" />
-        <file src="..\MvxAms.Droid\bin\Debug\MobiliTips.MvxPlugins.MvxAms.dll" target="lib\MonoAndroid\MobiliTips.MvxPlugins.MvxAms.dll" />
-        <file src="..\MvxAms.Droid\bin\Debug\MobiliTips.MvxPlugins.MvxAms.Droid.dll" target="lib\MonoAndroid\MobiliTips.MvxPlugins.MvxAms.Droid.dll" />
-        <file src="..\MvxAms\bin\Debug\MobiliTips.MvxPlugins.MvxAms.dll" target="lib\portable-win+net45+wp8+win8+wpa81+MonoAndroid10+Xamarin.iOS10\MobiliTips.MvxPlugins.MvxAms.dll" />
-        <file src="..\MvxAms.WindowsStore\bin\x86\Debug\MobiliTips.MvxPlugins.MvxAms.dll" target="lib\win81\MobiliTips.MvxPlugins.MvxAms.dll" />
-        <file src="..\MvxAms.WindowsStore\bin\x86\Debug\MobiliTips.MvxPlugins.MvxAms.WindowsStore.dll" target="lib\win81\MobiliTips.MvxPlugins.MvxAms.WindowsStore.dll" />
-        <file src="..\MvxAms.WindowsPhone\Bin\ARM\Debug\MobiliTips.MvxPlugins.MvxAms.dll" target="lib\wp8\MobiliTips.MvxPlugins.MvxAms.dll" />
-        <file src="..\MvxAms.WindowsPhone\Bin\ARM\Debug\MobiliTips.MvxPlugins.MvxAms.WindowsPhone.dll" target="lib\wp8\MobiliTips.MvxPlugins.MvxAms.WindowsPhone.dll" />
-        <file src="..\MvxAms.WindowsPhoneStore\bin\ARM\Debug\MobiliTips.MvxPlugins.MvxAms.dll" target="lib\wpa81\MobiliTips.MvxPlugins.MvxAms.dll" />
-        <file src="..\MvxAms.WindowsPhoneStore\bin\ARM\Debug\MobiliTips.MvxPlugins.MvxAms.WindowsPhoneStore.dll" target="lib\wpa81\MobiliTips.MvxPlugins.MvxAms.WindowsPhoneStore.dll" />
-        <file src="..\MvxAms.Touch\bin\iPhone\Debug\MobiliTips.MvxPlugins.MvxAms.dll" target="lib\Xamarin.iOS10\MobiliTips.MvxPlugins.MvxAms.dll" />
-        <file src="..\MvxAms.Touch\bin\iPhone\Debug\MobiliTips.MvxPlugins.MvxAms.Touch.dll" target="lib\Xamarin.iOS10\MobiliTips.MvxPlugins.MvxAms.Touch.dll" />
+        <file src="content\MonoAndroid\Bootstrap\MvxAmsPluginBootstrap.cs.pp" target="content\MonoAndroid\Bootstrap\MvxAmsPluginBootstrap.cs.pp" />
+        <file src="content\MonoAndroid\ToDo-MvxAms\_ Droid Setup.txt" target="content\MonoAndroid\ToDo-MvxAms\_ Droid Setup.txt" />
+        <file src="content\portable-win+net45+wp8+win8+wpa81+MonoAndroid10+Xamarin.iOS10\ToDo-MvxAms\_ Core Setup.txt" target="content\portable-win+net45+wp8+win8+wpa81+MonoAndroid10+Xamarin.iOS10\ToDo-MvxAms\_ Core Setup.txt" />
+        <file src="content\portable-win+net45+wp8+win8+wpa81+MonoAndroid10+Xamarin.iOS10\MvxAmsPluginConfiguration.cs.pp" target="content\portable-win+net45+wp8+win8+wpa81+MonoAndroid10+Xamarin.iOS10\MvxAmsPluginConfiguration.cs.pp" />
+        <file src="content\win81\Bootstrap\MvxAmsPluginBootstrap.cs.pp" target="content\win81\Bootstrap\MvxAmsPluginBootstrap.cs.pp" />
+        <file src="content\win81\ToDo-MvxAms\_ WinStore Setup.txt" target="content\win81\ToDo-MvxAms\_ WinStore Setup.txt" />
+        <file src="content\wp8\Bootstrap\MvxAmsPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\MvxAmsPluginBootstrap.cs.pp" />
+        <file src="content\wp8\ToDo-MvxAms\_ WinPhone Setup.txt" target="content\wp8\ToDo-MvxAms\_ WinPhone Setup.txt" />
+        <file src="content\wpa81\Bootstrap\MvxAmsPluginBootstrap.cs.pp" target="content\wpa81\Bootstrap\MvxAmsPluginBootstrap.cs.pp" />
+        <file src="content\wpa81\ToDo-MvxAms\_ WinPhone Setup.txt" target="content\wpa81\ToDo-MvxAms\_ WinPhone Setup.txt" />
+        <file src="content\Xamarin.iOS10\Bootstrap\MvxAmsPluginBootstrap.cs.pp" target="content\Xamarin.iOS10\Bootstrap\MvxAmsPluginBootstrap.cs.pp" />
+        <file src="content\Xamarin.iOS10\ToDo-MvxAms\_ Touch Setup.txt" target="content\Xamarin.iOS10\ToDo-MvxAms\_ Touch Setup.txt" />
+        <file src="lib\MonoAndroid\MobiliTips.MvxPlugins.MvxAms.dll" target="lib\MonoAndroid\MobiliTips.MvxPlugins.MvxAms.dll" />
+        <file src="lib\MonoAndroid\MobiliTips.MvxPlugins.MvxAms.Droid.dll" target="lib\MonoAndroid\MobiliTips.MvxPlugins.MvxAms.Droid.dll" />
+        <file src="lib\portable-win+net45+wp8+win8+wpa81+MonoAndroid10+Xamarin.iOS10\MobiliTips.MvxPlugins.MvxAms.dll" target="lib\portable-win+net45+wp8+win8+wpa81+MonoAndroid10+Xamarin.iOS10\MobiliTips.MvxPlugins.MvxAms.dll" />
+        <file src="lib\win81\MobiliTips.MvxPlugins.MvxAms.dll" target="lib\win81\MobiliTips.MvxPlugins.MvxAms.dll" />
+        <file src="lib\win81\MobiliTips.MvxPlugins.MvxAms.WindowsStore.dll" target="lib\win81\MobiliTips.MvxPlugins.MvxAms.WindowsStore.dll" />
+        <file src="lib\wp8\MobiliTips.MvxPlugins.MvxAms.dll" target="lib\wp8\MobiliTips.MvxPlugins.MvxAms.dll" />
+        <file src="lib\wp8\MobiliTips.MvxPlugins.MvxAms.WindowsPhone.dll" target="lib\wp8\MobiliTips.MvxPlugins.MvxAms.WindowsPhone.dll" />
+        <file src="lib\wpa81\MobiliTips.MvxPlugins.MvxAms.dll" target="lib\wpa81\MobiliTips.MvxPlugins.MvxAms.dll" />
+        <file src="lib\wpa81\MobiliTips.MvxPlugins.MvxAms.WindowsPhoneStore.dll" target="lib\wpa81\MobiliTips.MvxPlugins.MvxAms.WindowsPhoneStore.dll" />
+        <file src="lib\Xamarin.iOS10\MobiliTips.MvxPlugins.MvxAms.dll" target="lib\Xamarin.iOS10\MobiliTips.MvxPlugins.MvxAms.dll" />
+        <file src="lib\Xamarin.iOS10\MobiliTips.MvxPlugins.MvxAms.Touch.dll" target="lib\Xamarin.iOS10\MobiliTips.MvxPlugins.MvxAms.Touch.dll" />
     </files>
 </package>

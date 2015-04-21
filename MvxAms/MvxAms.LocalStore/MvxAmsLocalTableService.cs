@@ -1,21 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Cirrious.CrossCore;
 using Microsoft.WindowsAzure.MobileServices;
 using Microsoft.WindowsAzure.MobileServices.Sync;
+using MobiliTips.MvxPlugins.MvxAms.Data;
 
-namespace MobiliTips.MvxPlugins.MvxAms.Data
+namespace MobiliTips.MvxPlugins.MvxAms.LocalStore
 {
     public class MvxAmsLocalTableService<T> : IMvxAmsLocalTableService<T>
     {
         private readonly IMvxAmsPluginConfiguration _configuration;
-        private readonly MobileServiceClient _client;
+        private readonly IMobileServiceClient _client;
         private IMobileServiceSyncTable<T> _localTable;
 
-        public MvxAmsLocalTableService(IMvxAmsPluginConfiguration configuration, MobileServiceClient client)
+        public MvxAmsLocalTableService()
         {
-            _configuration = configuration;
-            _client = client;
+            _configuration = Mvx.Resolve<IMvxAmsPluginConfiguration>();
+            _client = Mvx.Resolve<IMobileServiceClient>();
         }
 
         private async Task<bool> InitializeAsync()

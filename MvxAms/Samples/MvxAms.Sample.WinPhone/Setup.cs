@@ -10,6 +10,7 @@ using Cirrious.MvvmCross.WindowsPhone.Views;
 using Microsoft.Phone.Controls;
 using MobiliTips.MvxPlugins.MvxAms;
 using MobiliTips.MvxPlugins.MvxForms;
+using MvxAms.Sample.Configurations;
 using MvxAms.Sample.WinPhone.Presenters;
 using Xamarin.Forms;
 
@@ -45,6 +46,9 @@ namespace MvxAms.Sample.WinPhone
         {
             if (plugin == typeof(MobiliTips.MvxPlugins.MvxAms.WindowsPhone.Plugin))
                 return new MvxAmsPluginConfiguration();
+
+            if (plugin == typeof(MobiliTips.MvxPlugins.MvxAms.LocalStore.PluginLoader))
+                return new MvxAmsPluginLocalStoreExtensionConfiguration(string.Empty);
 
             return base.GetPluginConfiguration(plugin);
         }

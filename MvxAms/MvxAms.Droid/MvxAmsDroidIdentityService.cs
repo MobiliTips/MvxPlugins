@@ -9,9 +9,16 @@ namespace MobiliTips.MvxPlugins.MvxAms.Droid
 {
     public class MvxAmsDroidIdentityService : IMvxAmsPlatformIdentityService
     {
-        public async Task<MobileServiceUser> LoginAsync(MobileServiceClient client, MobileServiceAuthenticationProvider provider, IDictionary<string, string> parameters = null)
+        private readonly IMobileServiceClient _client;
+
+        public MvxAmsDroidIdentityService()
         {
-            return await client.LoginAsync(Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity, provider, parameters);
+            _client = Mvx.Resolve<IMobileServiceClient>();
+        }
+
+        public async Task<MobileServiceUser> LoginAsync(MobileServiceAuthenticationProvider provider, IDictionary<string, string> parameters = null)
+        {
+            return await _client.LoginAsync(Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity, provider, parameters);
         }
     }
 }

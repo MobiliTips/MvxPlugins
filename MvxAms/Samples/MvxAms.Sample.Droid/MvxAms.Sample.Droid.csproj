@@ -140,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrap\MvxAmsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\MvxAmsPluginLocalStoreExtensionBootstrap.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="MvxFormsApplicationMainActivity.cs" />
@@ -173,6 +174,10 @@
     <ProjectReference Include="..\..\MvxAms.Droid\MvxAms.Droid.csproj">
       <Project>{f6dae289-4d42-4985-be3f-9abee21b2313}</Project>
       <Name>MvxAms.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MvxAms.LocalStore\MvxAms.LocalStore.csproj">
+      <Project>{3d49d528-ddfc-4a90-83f6-635b5d9dbfb0}</Project>
+      <Name>MvxAms.LocalStore</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\MvxAms\MvxAms.csproj">
       <Project>{9df262d9-a976-4e55-96e7-b7779c9da7a0}</Project>

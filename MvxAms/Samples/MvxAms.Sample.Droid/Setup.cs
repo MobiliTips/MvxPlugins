@@ -8,6 +8,7 @@ using Cirrious.MvvmCross.Droid.Views;
 using Cirrious.MvvmCross.ViewModels;
 using Cirrious.MvvmCross.Views;
 using MobiliTips.MvxPlugins.MvxForms;
+using MvxAms.Sample.Configurations;
 using MvxAms.Sample.Droid.Presenters;
 
 namespace MvxAms.Sample.Droid
@@ -38,8 +39,11 @@ namespace MvxAms.Sample.Droid
 
         protected override IMvxPluginConfiguration GetPluginConfiguration(Type plugin)
         {
-            if (plugin == typeof (MobiliTips.MvxPlugins.MvxAms.Droid.Plugin)) 
+            if (plugin == typeof (MobiliTips.MvxPlugins.MvxAms.Droid.Plugin))
                 return new MvxAmsPluginConfiguration();
+
+            if (plugin == typeof(MobiliTips.MvxPlugins.MvxAms.LocalStore.PluginLoader))
+                return new MvxAmsPluginLocalStoreExtensionConfiguration(Environment.GetFolderPath(Environment.SpecialFolder.Personal));
 
             return base.GetPluginConfiguration(plugin);
         }

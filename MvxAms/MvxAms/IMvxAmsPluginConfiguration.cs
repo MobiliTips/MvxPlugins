@@ -24,18 +24,6 @@ namespace MobiliTips.MvxPlugins.MvxAms
         Assembly ModelAssembly { get; set; }
 
         /// <summary>
-        /// Database file device path
-        /// </summary>
-        /// <value>platform default root storage</value>
-        string DatabasePath { get; set; }
-
-        /// <summary>
-        /// Database name
-        /// </summary>
-        /// <value>amslocalstore.db</value>
-        string DatabaseName { get; set; }
-
-        /// <summary>
         /// Initialization timeout
         /// </summary>
         /// <value>30sec</value>

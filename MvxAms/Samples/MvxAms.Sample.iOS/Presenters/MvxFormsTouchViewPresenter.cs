@@ -1,7 +1,7 @@
 using Cirrious.MvvmCross.Touch.Views.Presenters;
+using MobiliTips.MvxPlugins.MvxForms;
 using UIKit;
 using Xamarin.Forms;
-using MobiliTips.MvxPlugins.MvxForms;
 
 namespace MvxAms.Sample.iOS.Presenters
 {

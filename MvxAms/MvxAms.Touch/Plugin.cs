@@ -1,5 +1,7 @@
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Plugins;
+using Microsoft.WindowsAzure.MobileServices;
+using MobiliTips.MvxPlugins.MvxAms.Identity;
 
 namespace MobiliTips.MvxPlugins.MvxAms.Touch
 {
@@ -10,7 +12,7 @@ namespace MobiliTips.MvxPlugins.MvxAms.Touch
 
         public void Configure(IMvxPluginConfiguration configuration)
         {
-            if (configuration == null)
+            if (!(configuration is IMvxAmsPluginConfiguration))
                 return;
 
             _configuration = (IMvxAmsPluginConfiguration)configuration;
@@ -18,7 +20,10 @@ namespace MobiliTips.MvxPlugins.MvxAms.Touch
 
         public void Load()
         {
-            Mvx.RegisterSingleton<IMvxAmsService>(new MvxAmsService(_configuration, new MvxAmsTouchIdentityService()));
+            Mvx.RegisterSingleton(_configuration);
+            Mvx.RegisterSingleton<IMobileServiceClient>(new MobileServiceClient(_configuration.AmsAppUrl, _configuration.AmsAppKey));
+            Mvx.RegisterType<IMvxAmsPlatformIdentityService, MvxAmsTouchIdentityService>();
+            Mvx.RegisterType<IMvxAmsService, MvxAmsService>();
         }
     }
 }

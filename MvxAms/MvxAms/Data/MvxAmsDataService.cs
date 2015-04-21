@@ -1,25 +1,24 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Cirrious.CrossCore;
 using Microsoft.WindowsAzure.MobileServices;
-using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
-using Microsoft.WindowsAzure.MobileServices.Sync;
 
 namespace MobiliTips.MvxPlugins.MvxAms.Data
 {
     public class MvxAmsDataService : IMvxAmsDataService
     {
         private readonly IMvxAmsPluginConfiguration _configuration;
-        private readonly MobileServiceClient _client;
-        private MobileServiceSQLiteStore _localStore;
+        private readonly IMobileServiceClient _client;
+        private readonly IMvxAmsLocalStoreService _localStoreService;
+        private bool _isInitilized;
 
-        public MvxAmsDataService(IMvxAmsPluginConfiguration configuration, MobileServiceClient client)
+        public MvxAmsDataService()
         {
-            _configuration = configuration;
-            _client = client;
+            _configuration = Mvx.Resolve<IMvxAmsPluginConfiguration>();
+            _client = Mvx.Resolve<IMobileServiceClient>();
+            Mvx.TryResolve(out _localStoreService);
 
             // Init tables
             Task.Run(async () => await InitializeAsync());
@@ -27,20 +26,8 @@ namespace MobiliTips.MvxPlugins.MvxAms.Data
 
         private async Task<bool> InitializeAsync()
         {
-            if (!_client.SyncContext.IsInitialized)
+            if (!_isInitilized)
             {
-                // Init local store
-                var fullPath = Path.Combine(_configuration.DatabasePath, _configuration.DatabaseName);
-                try
-                {
-                    _localStore = new MobileServiceSQLiteStore(fullPath);
-                }
-                catch (Exception ex)
-                {
-                    Mvx.TaggedError("MvxAms", string.Format("Unable to create database file {0}. Local store initialization terminated with error: {1}", fullPath, ex.Message));
-                    return false;
-                }
-
                 // Get the list of tables
                 List<Type> tableTypes;
                 try
@@ -53,53 +40,43 @@ namespace MobiliTips.MvxPlugins.MvxAms.Data
                     return false;
                 }
 
-                // Define local tables
-                foreach (var tableType in tableTypes)
-                {
-                    var defineTable = GetType().GetMethod("DefineTable", BindingFlags.None).MakeGenericMethod(tableType);
-                    defineTable.Invoke(this, null);
-                }
-
-                var syncHandlerType = _configuration.ModelAssembly.GetTypes().FirstOrDefault(type => typeof(IMobileServiceSyncHandler).IsAssignableFrom(type));
-                var syncHandler = syncHandlerType != null ? (IMobileServiceSyncHandler)Activator.CreateInstance(syncHandlerType) : new MobileServiceSyncHandler();
-
                 // Init local store
-                try
+                if (_localStoreService != null && !_client.SyncContext.IsInitialized)
                 {
-                    await _client.SyncContext.InitializeAsync(_localStore, syncHandler);
-                }
-                catch (Exception)
-                {
-                    Mvx.TaggedError("MvxAms", "Unable to initialize local store. Please refer to online documentation.");
+                    await _localStoreService.InitializeAsync(tableTypes);
                 }
 
                 // Get tables
                 foreach (var tableType in tableTypes)
                 {
                     // Get local table
-                    var localTable = GetType().GetMethod("LocalTable").MakeGenericMethod(tableType);
-                    localTable.Invoke(this, null);
+                    if (_client.SyncContext.IsInitialized)
+                    {
+                        var localTable = GetType().GetMethod("LocalTable").MakeGenericMethod(tableType);
+                        localTable.Invoke(this, null); 
+                    }
 
                     // Get remote table
                     var remoteTable = GetType().GetMethod("RemoteTable").MakeGenericMethod(tableType);
                     remoteTable.Invoke(this, null);
-                } 
-            }
-            return _client.SyncContext.IsInitialized;
-        }
+                }
 
-        private void DefineTable<T>()
-        {
-            _localStore.DefineTable<T>();
+                _isInitilized = _localStoreService == null || _client.SyncContext.IsInitialized;
+            }
+            return _isInitilized;
         }
 
         public IMvxAmsLocalTableService<T> LocalTable<T>()
         {
+            if (_localStoreService == null)
+                throw new TypeLoadException(string.Format("Unable to get {0} local table. ", typeof(T).Name) + 
+                    "MvvmCross - Azure Mobile Services Local Store plugin must be installed to process this request.");
+
             IMvxAmsLocalTableService<T> localTable;
             Mvx.TryResolve(out localTable);
             if (localTable == null)
             {
-                localTable = new MvxAmsLocalTableService<T>(_configuration, _client);
+                localTable = _localStoreService.GetLocalTable<T>();
                 Mvx.RegisterSingleton(localTable);
             }
             return localTable;
@@ -111,7 +88,7 @@ namespace MobiliTips.MvxPlugins.MvxAms.Data
             Mvx.TryResolve(out remoteTable);
             if(remoteTable == null)
             {
-                remoteTable = new MvxAmsRemoteTableService<T>(_configuration, _client);
+                remoteTable = new MvxAmsRemoteTableService<T>();
                 Mvx.RegisterSingleton(remoteTable);
             }
             return remoteTable;
@@ -119,12 +96,27 @@ namespace MobiliTips.MvxPlugins.MvxAms.Data
 
         public async Task PushAsync()
         {
+            if (_localStoreService == null)
+                throw new TypeLoadException("Unable to push your data. " +
+                                            "MvvmCross - Azure Mobile Services Local Store plugin must be installed to process this request.");
+
             if (!await InitializeAsync())
                 throw new MobileServiceInvalidOperationException("Unable to push your data. Initialization failed.", null, null);
             
             await _client.SyncContext.PushAsync();
         }
 
-        public long PendingOperations { get { return _client.SyncContext.PendingOperations; } }
+        public long PendingOperations
+        {
+            get
+            {
+
+                if (_localStoreService == null)
+                    throw new TypeLoadException("Unable to get pending operations. " +
+                                                "MvvmCross - Azure Mobile Services Local Store plugin must be installed to process this request.");
+
+                return _client.SyncContext.PendingOperations;
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Cirrious.CrossCore;
 using Microsoft.WindowsAzure.MobileServices;
 using MobiliTips.MvxPlugins.MvxAms.Identity;
 
@@ -7,9 +8,16 @@ namespace MobiliTips.MvxPlugins.MvxAms.WindowsPhone
 {
     public class MvxAmsWindowsPhoneIdentityService : IMvxAmsPlatformIdentityService
     {
-        public async Task<MobileServiceUser> LoginAsync(MobileServiceClient client, MobileServiceAuthenticationProvider provider, IDictionary<string, string> parameters = null)
+        private readonly IMobileServiceClient _client;
+
+        public MvxAmsWindowsPhoneIdentityService()
         {
-            return await client.LoginAsync(provider, parameters);
+            _client = Mvx.Resolve<IMobileServiceClient>();
+        }
+
+        public async Task<MobileServiceUser> LoginAsync(MobileServiceAuthenticationProvider provider, IDictionary<string, string> parameters = null)
+        {
+            return await _client.LoginAsync(provider, parameters);
         }
     }
 }

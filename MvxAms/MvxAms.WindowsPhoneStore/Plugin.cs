@@ -1,6 +1,7 @@
-﻿using System.IO;
-using Cirrious.CrossCore;
+﻿using Cirrious.CrossCore;
 using Cirrious.CrossCore.Plugins;
+using Microsoft.WindowsAzure.MobileServices;
+using MobiliTips.MvxPlugins.MvxAms.Identity;
 
 namespace MobiliTips.MvxPlugins.MvxAms.WindowsPhoneStore
 {
@@ -11,26 +12,18 @@ namespace MobiliTips.MvxPlugins.MvxAms.WindowsPhoneStore
 
         public void Configure(IMvxPluginConfiguration configuration)
         {
-            if (configuration == null)
+            if (!(configuration is IMvxAmsPluginConfiguration))
                 return;
 
             _configuration = (IMvxAmsPluginConfiguration)configuration;
-
-            // Combine platform default root storage with the user specified one
-            if (string.IsNullOrEmpty(_configuration.DatabasePath))
-            {
-                _configuration.DatabasePath = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
-            }
-            else if (!_configuration.DatabasePath.Contains(Windows.Storage.ApplicationData.Current.LocalFolder.Path))
-            {
-                _configuration.DatabasePath = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path,
-                _configuration.DatabasePath);
-            }
         }
 
         public void Load()
         {
-            Mvx.RegisterSingleton<IMvxAmsService>(new MvxAmsService(_configuration, new MvxAmsWindowsPhoneStoreIdentityService()));
+            Mvx.RegisterSingleton(_configuration);
+            Mvx.RegisterSingleton<IMobileServiceClient>(new MobileServiceClient(_configuration.AmsAppUrl, _configuration.AmsAppKey));
+            Mvx.RegisterType<IMvxAmsPlatformIdentityService, MvxAmsWindowsPhoneStoreIdentityService>();
+            Mvx.RegisterType<IMvxAmsService, MvxAmsService>();
         }
     }
 }

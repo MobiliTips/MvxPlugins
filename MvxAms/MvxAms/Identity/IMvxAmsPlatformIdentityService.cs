@@ -6,6 +6,6 @@ namespace MobiliTips.MvxPlugins.MvxAms.Identity
 {
     public interface IMvxAmsPlatformIdentityService
     {
-        Task<MobileServiceUser> LoginAsync(MobileServiceClient client, MobileServiceAuthenticationProvider provider, IDictionary<string, string> parameters = null);
+        Task<MobileServiceUser> LoginAsync(MobileServiceAuthenticationProvider provider, IDictionary<string, string> parameters = null);
     }
 }

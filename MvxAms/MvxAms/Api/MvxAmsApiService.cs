@@ -1,17 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Cirrious.CrossCore;
 using Microsoft.WindowsAzure.MobileServices;
 
 namespace MobiliTips.MvxPlugins.MvxAms.Api
 {
     public class MvxAmsApiService : IMvxAmsApiService
     {
-        private readonly MobileServiceClient _client;
+        private readonly IMobileServiceClient _client;
 
-        public MvxAmsApiService(MobileServiceClient client)
+        public MvxAmsApiService()
         {
-            _client = client;
+            _client = Mvx.Resolve<IMobileServiceClient>();
         }
 
         public async Task<T> InvokeApiAsync<T>(string apiName)

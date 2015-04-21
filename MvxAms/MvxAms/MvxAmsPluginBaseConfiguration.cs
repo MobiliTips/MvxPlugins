@@ -4,9 +4,11 @@ using Cirrious.CrossCore.Plugins;
 
 namespace MobiliTips.MvxPlugins.MvxAms
 {
+    /// <summary>
+    /// MvxAms plugin base configuration
+    /// </summary>
     public abstract class MvxAmsPluginBaseConfiguration : IMvxAmsPluginConfiguration, IMvxPluginConfiguration
     {
-        private string _databaseName = "amslocalstore.db";
         private TimeSpan _initTimeout = TimeSpan.FromSeconds(30);
 
         /// <summary>
@@ -23,22 +25,6 @@ namespace MobiliTips.MvxPlugins.MvxAms
         /// Assembly hosting model classes (usually Core)
         /// </summary>
         public Assembly ModelAssembly { get; set; }
-
-        /// <summary>
-        /// Database file device path
-        /// </summary>
-        /// <value>platform default root storage</value>
-        public string DatabasePath { get; set; }
-
-        /// <summary>
-        /// Database name
-        /// </summary>
-        /// <value>amslocalstore.db</value>
-        public string DatabaseName
-        {
-            get { return _databaseName; }
-            set { _databaseName = value; }
-        }
 
         /// <summary>
         /// Initialization timeout

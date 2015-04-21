@@ -8,6 +8,7 @@ using Cirrious.CrossCore.Plugins;
 using Cirrious.MvvmCross.Views;
 using Cirrious.MvvmCross.WindowsCommon.Views;
 using MobiliTips.MvxPlugins.MvxForms;
+using MvxAms.Sample.Configurations;
 using MvxAms.Sample.WindowsCommon.Presenters;
 
 namespace MvxAms.Sample.WindowsCommon
@@ -40,6 +41,9 @@ namespace MvxAms.Sample.WindowsCommon
         {
             if (plugin == typeof(MobiliTips.MvxPlugins.MvxAms.WindowsPhoneStore.Plugin))
                 return new MvxAmsPluginConfiguration();
+
+            if (plugin == typeof(MobiliTips.MvxPlugins.MvxAms.LocalStore.PluginLoader))
+                return new MvxAmsPluginLocalStoreExtensionConfiguration(Windows.Storage.ApplicationData.Current.LocalFolder.Path);
 
             return base.GetPluginConfiguration(plugin);
         }
