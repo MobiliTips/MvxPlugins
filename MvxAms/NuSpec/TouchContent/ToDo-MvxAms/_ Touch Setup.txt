@@ -1,6 +1,17 @@
-1. Add plugin configuration into the Setup class:
+1. Add top UIViewController registration into the InitializeLastChance of Setup.cs:
 
-	protected override IMvxPluginConfiguration GetPluginConfiguration(Type plugin)
+		protected override void InitializeLastChance()
+	    {
+	        base.InitializeLastChance();
+
+            Mvx.RegisterSingleton<IMvxAmsTouchTopViewController>(new MvxAmsTouchTopViewController(Window.RootViewController));
+	    }
+
+The top UIViewController is needed by the MvxAms plugin when calling the LoginAsync method.
+
+2. Add plugin configuration into the Setup class:
+
+		protected override IMvxPluginConfiguration GetPluginConfiguration(Type plugin)
         {
             if(plugin == typeof (MobiliTips.MvxPlugins.MvxAms.Touch.Plugin))
                 return new MvxAmsPluginConfiguration();
@@ -8,10 +19,12 @@
             return base.GetPluginConfiguration(plugin);
         }
 
-2. You can also override default values here with iOS specific parameters
-(but leaving all at default should work. See online documentation for tutorials)
 
 Enjoy!
+
+
+NB: If you want to manage local data thanks to LocalTable<T> and Push methods
+you have to install the MvvmCross - Azure Mobile Services plugin Local Store extension.
 
 
 Tutorials on http://mobilitips.wordpress.com

@@ -1,0 +1,33 @@
+1. Add SQLite initialization into the InitializeLastChance of Setup.cs so that it should look like this:
+
+		protected override void InitializeLastChance()
+	    {
+	        base.InitializeLastChance();
+
+            Mvx.RegisterSingleton<IMvxAmsTouchTopViewController>(new MvxAmsTouchTopViewController(Window.RootViewController));
+
+            SQLitePCL.CurrentPlatform.Init();
+	    }
+
+2. Add plugin extension configuration into the Setup class so that it should look like this:
+
+		protected override IMvxPluginConfiguration GetPluginConfiguration(Type plugin)
+        {
+            if (plugin == typeof (MobiliTips.MvxPlugins.MvxAms.Touch.Plugin))
+                return new MvxAmsPluginConfiguration();
+
+            if (plugin == typeof(MobiliTips.MvxPlugins.MvxAms.LocalStore.PluginLoader))
+                return new MvxAmsPluginLocalStoreExtensionConfiguration(Environment.GetFolderPath(Environment.SpecialFolder.Personal));
+
+            return base.GetPluginConfiguration(plugin);
+        }
+
+3. [Optional] You can also override DatabaseFileName and DatabaseFullPath default values here with iOS specific values
+
+
+Enjoy!
+
+
+Tutorials on http://mobilitips.wordpress.com
+Project on https://github.com/MobiliTips
+Contact on Twitter @MobiliTips

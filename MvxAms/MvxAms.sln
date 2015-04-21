@@ -35,6 +35,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvxAms.Sample.Droid", "Samp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuSpec", "NuSpec", "{F9C8FE75-071C-4EB4-AE46-D163624E5971}"
 	ProjectSection(SolutionItems) = preProject
+		NuSpec\MobiliTips.MvxPlugins.MvxAms.LocalStore.nuspec = NuSpec\MobiliTips.MvxPlugins.MvxAms.LocalStore.nuspec
 		NuSpec\MobiliTips.MvxPlugins.MvxAms.nuspec = NuSpec\MobiliTips.MvxPlugins.MvxAms.nuspec
 	EndProjectSection
 EndProject
@@ -43,6 +44,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstrap", "Bootstrap", "{F8CEB270-F655-4357-BC12-6F059F6A9BEC}"
 	ProjectSection(SolutionItems) = preProject
 		NuSpec\DroidContent\Bootstrap\MvxAmsPluginBootstrap.cs.pp = NuSpec\DroidContent\Bootstrap\MvxAmsPluginBootstrap.cs.pp
+		NuSpec\DroidContent\Bootstrap\MvxAmsPluginLocalStoreExtensionBootstrap.cs.pp = NuSpec\DroidContent\Bootstrap\MvxAmsPluginLocalStoreExtensionBootstrap.cs.pp
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxAms", "ToDo-MvxAms", "{062F0DF8-BD61-4EF8-9937-3526D8851DDE}"
@@ -55,6 +57,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstrap", "Bootstrap", "{94F08314-4365-4729-B8B8-B5B726E92A92}"
 	ProjectSection(SolutionItems) = preProject
 		NuSpec\TouchContent\Bootstrap\MvxAmsPluginBootstrap.cs.pp = NuSpec\TouchContent\Bootstrap\MvxAmsPluginBootstrap.cs.pp
+		NuSpec\TouchContent\Bootstrap\MvxAmsPluginLocalStoreExtensionBootstrap.cs.pp = NuSpec\TouchContent\Bootstrap\MvxAmsPluginLocalStoreExtensionBootstrap.cs.pp
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxAms", "ToDo-MvxAms", "{33042CB1-34CA-4435-AD60-EEAB47275DD7}"
@@ -67,6 +70,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstrap", "Bootstrap", "{72C52696-62A1-4C34-9D10-C8E80A9078BA}"
 	ProjectSection(SolutionItems) = preProject
 		NuSpec\WinPhoneContent\Bootstrap\MvxAmsPluginBootstrap.cs.pp = NuSpec\WinPhoneContent\Bootstrap\MvxAmsPluginBootstrap.cs.pp
+		NuSpec\WinPhoneContent\Bootstrap\MvxAmsPluginLocalStoreExtensionBootstrap.cs.pp = NuSpec\WinPhoneContent\Bootstrap\MvxAmsPluginLocalStoreExtensionBootstrap.cs.pp
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxAms", "ToDo-MvxAms", "{92AEC6F4-9C34-424B-931C-37464CFCD8CD}"
@@ -83,6 +87,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstrap", "Bootstrap", "{D9906E16-82D0-4CCB-9364-16512EA2C8B0}"
 	ProjectSection(SolutionItems) = preProject
 		NuSpec\WindowsCommonContent\WinPhoneContent\Bootstrap\MvxAmsPluginBootstrap.cs.pp = NuSpec\WindowsCommonContent\WinPhoneContent\Bootstrap\MvxAmsPluginBootstrap.cs.pp
+		NuSpec\WindowsCommonContent\WinPhoneContent\Bootstrap\MvxAmsPluginLocalStoreExtensionBootstrap.cs.pp = NuSpec\WindowsCommonContent\WinPhoneContent\Bootstrap\MvxAmsPluginLocalStoreExtensionBootstrap.cs.pp
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxAms", "ToDo-MvxAms", "{4F6D7E7E-8F67-4104-AF7B-265262B57723}"
@@ -93,6 +98,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstrap", "Bootstrap", "{D1D5ED1F-0736-4DE0-8613-83790C1BE8BE}"
 	ProjectSection(SolutionItems) = preProject
 		NuSpec\WindowsCommonContent\WinStoreContent\Bootstrap\MvxAmsPluginBootstrap.cs.pp = NuSpec\WindowsCommonContent\WinStoreContent\Bootstrap\MvxAmsPluginBootstrap.cs.pp
+		NuSpec\WindowsCommonContent\WinStoreContent\Bootstrap\MvxAmsPluginLocalStoreExtensionBootstrap.cs.pp = NuSpec\WindowsCommonContent\WinStoreContent\Bootstrap\MvxAmsPluginLocalStoreExtensionBootstrap.cs.pp
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxAms", "ToDo-MvxAms", "{25F52A53-4BF2-4C2B-8134-F7ECCC77FBBF}"
@@ -101,9 +107,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxAms", "ToDo-MvxAms"
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoreContent", "CoreContent", "{596ACB28-902B-42B0-B3C4-BA70F1F4CC52}"
-	ProjectSection(SolutionItems) = preProject
-		NuSpec\CoreContent\MvxAmsPluginConfiguration.cs.pp = NuSpec\CoreContent\MvxAmsPluginConfiguration.cs.pp
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxAms", "ToDo-MvxAms", "{80ED9FC1-8ED1-4E39-A3CF-8E276D950C3B}"
 	ProjectSection(SolutionItems) = preProject
@@ -111,6 +114,42 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxAms", "ToDo-MvxAms"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvxAms.LocalStore", "MvxAms.LocalStore\MvxAms.LocalStore.csproj", "{3D49D528-DDFC-4A90-83F6-635B5D9DBFB0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{DBC76747-BE61-4E9F-9B20-F92EBA7CDC5C}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\CoreContent\Configurations\MvxAmsPluginConfiguration.cs.pp = NuSpec\CoreContent\Configurations\MvxAmsPluginConfiguration.cs.pp
+		NuSpec\CoreContent\Configurations\MvxAmsPluginLocalStoreExtensionConfiguration.cs.pp = NuSpec\CoreContent\Configurations\MvxAmsPluginLocalStoreExtensionConfiguration.cs.pp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxAmsLocalStore", "ToDo-MvxAmsLocalStore", "{1D63F415-5B85-4DB0-810D-41CCD5D733C5}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\CoreContent\ToDo-MvxAmsLocalStore\_ Core Setup.txt = NuSpec\CoreContent\ToDo-MvxAmsLocalStore\_ Core Setup.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxAmsLocalStore", "ToDo-MvxAmsLocalStore", "{94731521-2DF9-44A3-AF41-389E8B1479FC}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\DroidContent\ToDo-MvxAmsLocalStore\_ Droid Setup.txt = NuSpec\DroidContent\ToDo-MvxAmsLocalStore\_ Droid Setup.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxAmsLocalStore", "ToDo-MvxAmsLocalStore", "{AEE5B3A3-155A-482A-BAEA-A587EA96FD5D}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\TouchContent\ToDo-MvxAmsLocalStore\_ Touch Setup.txt = NuSpec\TouchContent\ToDo-MvxAmsLocalStore\_ Touch Setup.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxAmsLocalStore", "ToDo-MvxAmsLocalStore", "{8AF843AD-2101-4E16-AB70-DBC9735F6009}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\WinPhoneContent\ToDo-MvxAmsLocalStore\_ WinPhone Setup.txt = NuSpec\WinPhoneContent\ToDo-MvxAmsLocalStore\_ WinPhone Setup.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxAmsLocalStore", "ToDo-MvxAmsLocalStore", "{BE87C472-310D-4ABC-BD1F-8DE7FD13EEFD}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\WindowsCommonContent\WinPhoneContent\ToDo-MvxAmsLocalStore\_ WinPhone Setup.txt = NuSpec\WindowsCommonContent\WinPhoneContent\ToDo-MvxAmsLocalStore\_ WinPhone Setup.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDo-MvxAmsLocalStore", "ToDo-MvxAmsLocalStore", "{9DA8A95E-EBCA-45B0-A34F-1A74D2A2FB0B}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\WindowsCommonContent\WinStoreContent\ToDo-MvxAmsLocalStore\_ WinStore Setup.txt = NuSpec\WindowsCommonContent\WinStoreContent\ToDo-MvxAmsLocalStore\_ WinStore Setup.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -174,6 +213,7 @@ Global
 		{9DF262D9-A976-4E55-96E7-B7779C9DA7A0}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{9DF262D9-A976-4E55-96E7-B7779C9DA7A0}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{9DF262D9-A976-4E55-96E7-B7779C9DA7A0}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{9DF262D9-A976-4E55-96E7-B7779C9DA7A0}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{9DF262D9-A976-4E55-96E7-B7779C9DA7A0}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{9DF262D9-A976-4E55-96E7-B7779C9DA7A0}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{9DF262D9-A976-4E55-96E7-B7779C9DA7A0}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -216,6 +256,7 @@ Global
 		{AADFAD32-5CB8-43E7-B2D4-6666ABCDCD04}.Debug|iPhone.ActiveCfg = Debug|ARM
 		{AADFAD32-5CB8-43E7-B2D4-6666ABCDCD04}.Debug|iPhone.Build.0 = Debug|ARM
 		{AADFAD32-5CB8-43E7-B2D4-6666ABCDCD04}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{AADFAD32-5CB8-43E7-B2D4-6666ABCDCD04}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{AADFAD32-5CB8-43E7-B2D4-6666ABCDCD04}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{AADFAD32-5CB8-43E7-B2D4-6666ABCDCD04}.Debug|Mixed Platforms.Build.0 = Debug|x86
 		{AADFAD32-5CB8-43E7-B2D4-6666ABCDCD04}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -257,6 +298,7 @@ Global
 		{F6DAE289-4D42-4985-BE3F-9ABEE21B2313}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{F6DAE289-4D42-4985-BE3F-9ABEE21B2313}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{F6DAE289-4D42-4985-BE3F-9ABEE21B2313}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{F6DAE289-4D42-4985-BE3F-9ABEE21B2313}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{F6DAE289-4D42-4985-BE3F-9ABEE21B2313}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{F6DAE289-4D42-4985-BE3F-9ABEE21B2313}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{F6DAE289-4D42-4985-BE3F-9ABEE21B2313}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -295,6 +337,7 @@ Global
 		{25C3360C-718E-4E33-BF1F-7FF3AE931729}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{25C3360C-718E-4E33-BF1F-7FF3AE931729}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{25C3360C-718E-4E33-BF1F-7FF3AE931729}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{25C3360C-718E-4E33-BF1F-7FF3AE931729}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{25C3360C-718E-4E33-BF1F-7FF3AE931729}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{25C3360C-718E-4E33-BF1F-7FF3AE931729}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{25C3360C-718E-4E33-BF1F-7FF3AE931729}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -333,6 +376,7 @@ Global
 		{6BB70F09-3597-41DB-8D7A-5ED7F417E9E7}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{6BB70F09-3597-41DB-8D7A-5ED7F417E9E7}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{6BB70F09-3597-41DB-8D7A-5ED7F417E9E7}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{6BB70F09-3597-41DB-8D7A-5ED7F417E9E7}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{6BB70F09-3597-41DB-8D7A-5ED7F417E9E7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{6BB70F09-3597-41DB-8D7A-5ED7F417E9E7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{6BB70F09-3597-41DB-8D7A-5ED7F417E9E7}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -385,7 +429,9 @@ Global
 		{B454CA01-3FE2-40BE-9544-323B3E5FEC22}.Debug|iPhone.ActiveCfg = Debug|ARM
 		{B454CA01-3FE2-40BE-9544-323B3E5FEC22}.Debug|iPhone.Build.0 = Debug|ARM
 		{B454CA01-3FE2-40BE-9544-323B3E5FEC22}.Debug|iPhone.Deploy.0 = Debug|ARM
-		{B454CA01-3FE2-40BE-9544-323B3E5FEC22}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{B454CA01-3FE2-40BE-9544-323B3E5FEC22}.Debug|iPhoneSimulator.ActiveCfg = Debug|ARM
+		{B454CA01-3FE2-40BE-9544-323B3E5FEC22}.Debug|iPhoneSimulator.Build.0 = Debug|ARM
+		{B454CA01-3FE2-40BE-9544-323B3E5FEC22}.Debug|iPhoneSimulator.Deploy.0 = Debug|ARM
 		{B454CA01-3FE2-40BE-9544-323B3E5FEC22}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{B454CA01-3FE2-40BE-9544-323B3E5FEC22}.Debug|Mixed Platforms.Build.0 = Debug|x86
 		{B454CA01-3FE2-40BE-9544-323B3E5FEC22}.Debug|Mixed Platforms.Deploy.0 = Debug|x86
@@ -493,7 +539,9 @@ Global
 		{1127CD34-1F55-43F4-BAFD-EC372193F2A8}.Debug|iPhone.ActiveCfg = Debug|x86
 		{1127CD34-1F55-43F4-BAFD-EC372193F2A8}.Debug|iPhone.Build.0 = Debug|x86
 		{1127CD34-1F55-43F4-BAFD-EC372193F2A8}.Debug|iPhone.Deploy.0 = Debug|x86
-		{1127CD34-1F55-43F4-BAFD-EC372193F2A8}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{1127CD34-1F55-43F4-BAFD-EC372193F2A8}.Debug|iPhoneSimulator.ActiveCfg = Debug|x86
+		{1127CD34-1F55-43F4-BAFD-EC372193F2A8}.Debug|iPhoneSimulator.Build.0 = Debug|x86
+		{1127CD34-1F55-43F4-BAFD-EC372193F2A8}.Debug|iPhoneSimulator.Deploy.0 = Debug|x86
 		{1127CD34-1F55-43F4-BAFD-EC372193F2A8}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{1127CD34-1F55-43F4-BAFD-EC372193F2A8}.Debug|Mixed Platforms.Build.0 = Debug|x86
 		{1127CD34-1F55-43F4-BAFD-EC372193F2A8}.Debug|Mixed Platforms.Deploy.0 = Debug|x86
@@ -559,7 +607,9 @@ Global
 		{531D4686-3966-40D9-B8B6-549303CA7135}.Debug|iPhone.ActiveCfg = Debug|ARM
 		{531D4686-3966-40D9-B8B6-549303CA7135}.Debug|iPhone.Build.0 = Debug|ARM
 		{531D4686-3966-40D9-B8B6-549303CA7135}.Debug|iPhone.Deploy.0 = Debug|ARM
-		{531D4686-3966-40D9-B8B6-549303CA7135}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{531D4686-3966-40D9-B8B6-549303CA7135}.Debug|iPhoneSimulator.ActiveCfg = Debug|ARM
+		{531D4686-3966-40D9-B8B6-549303CA7135}.Debug|iPhoneSimulator.Build.0 = Debug|ARM
+		{531D4686-3966-40D9-B8B6-549303CA7135}.Debug|iPhoneSimulator.Deploy.0 = Debug|ARM
 		{531D4686-3966-40D9-B8B6-549303CA7135}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{531D4686-3966-40D9-B8B6-549303CA7135}.Debug|Mixed Platforms.Build.0 = Debug|x86
 		{531D4686-3966-40D9-B8B6-549303CA7135}.Debug|Mixed Platforms.Deploy.0 = Debug|x86
@@ -611,6 +661,7 @@ Global
 		{FFC7D48C-20EF-4D1D-9180-BCF2E83D4222}.Debug|iPhone.ActiveCfg = Debug|ARM
 		{FFC7D48C-20EF-4D1D-9180-BCF2E83D4222}.Debug|iPhone.Build.0 = Debug|ARM
 		{FFC7D48C-20EF-4D1D-9180-BCF2E83D4222}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{FFC7D48C-20EF-4D1D-9180-BCF2E83D4222}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{FFC7D48C-20EF-4D1D-9180-BCF2E83D4222}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{FFC7D48C-20EF-4D1D-9180-BCF2E83D4222}.Debug|Mixed Platforms.Build.0 = Debug|x86
 		{FFC7D48C-20EF-4D1D-9180-BCF2E83D4222}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -658,6 +709,7 @@ Global
 		{24E4A94C-7CD2-4002-959A-3F64D1F26555}.Debug|iPhone.ActiveCfg = Debug|x86
 		{24E4A94C-7CD2-4002-959A-3F64D1F26555}.Debug|iPhone.Build.0 = Debug|x86
 		{24E4A94C-7CD2-4002-959A-3F64D1F26555}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{24E4A94C-7CD2-4002-959A-3F64D1F26555}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{24E4A94C-7CD2-4002-959A-3F64D1F26555}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{24E4A94C-7CD2-4002-959A-3F64D1F26555}.Debug|Mixed Platforms.Build.0 = Debug|x86
 		{24E4A94C-7CD2-4002-959A-3F64D1F26555}.Debug|x64.ActiveCfg = Debug|x64
@@ -706,6 +758,8 @@ Global
 		{028C4DBD-AEBD-4A55-B60B-9B6AC3A01DAB}.Debug|ARM.Deploy.0 = Debug|Any CPU
 		{028C4DBD-AEBD-4A55-B60B-9B6AC3A01DAB}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{028C4DBD-AEBD-4A55-B60B-9B6AC3A01DAB}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{028C4DBD-AEBD-4A55-B60B-9B6AC3A01DAB}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{028C4DBD-AEBD-4A55-B60B-9B6AC3A01DAB}.Debug|iPhoneSimulator.Deploy.0 = Debug|Any CPU
 		{028C4DBD-AEBD-4A55-B60B-9B6AC3A01DAB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{028C4DBD-AEBD-4A55-B60B-9B6AC3A01DAB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{028C4DBD-AEBD-4A55-B60B-9B6AC3A01DAB}.Debug|Mixed Platforms.Deploy.0 = Debug|Any CPU
@@ -746,6 +800,7 @@ Global
 		{3D49D528-DDFC-4A90-83F6-635B5D9DBFB0}.Debug|ARM.Build.0 = Debug|Any CPU
 		{3D49D528-DDFC-4A90-83F6-635B5D9DBFB0}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{3D49D528-DDFC-4A90-83F6-635B5D9DBFB0}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{3D49D528-DDFC-4A90-83F6-635B5D9DBFB0}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{3D49D528-DDFC-4A90-83F6-635B5D9DBFB0}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{3D49D528-DDFC-4A90-83F6-635B5D9DBFB0}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{3D49D528-DDFC-4A90-83F6-635B5D9DBFB0}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -790,5 +845,12 @@ Global
 		{25F52A53-4BF2-4C2B-8134-F7ECCC77FBBF} = {47139E4E-5769-49B3-8523-154A784266E7}
 		{596ACB28-902B-42B0-B3C4-BA70F1F4CC52} = {F9C8FE75-071C-4EB4-AE46-D163624E5971}
 		{80ED9FC1-8ED1-4E39-A3CF-8E276D950C3B} = {596ACB28-902B-42B0-B3C4-BA70F1F4CC52}
+		{DBC76747-BE61-4E9F-9B20-F92EBA7CDC5C} = {596ACB28-902B-42B0-B3C4-BA70F1F4CC52}
+		{1D63F415-5B85-4DB0-810D-41CCD5D733C5} = {596ACB28-902B-42B0-B3C4-BA70F1F4CC52}
+		{94731521-2DF9-44A3-AF41-389E8B1479FC} = {F4EC9281-B705-415A-AB1F-A2C33794B677}
+		{AEE5B3A3-155A-482A-BAEA-A587EA96FD5D} = {ACD906FE-0A37-4E40-8E2C-4C7349206458}
+		{8AF843AD-2101-4E16-AB70-DBC9735F6009} = {410CE135-19FA-4311-A4E9-14C5176E6A46}
+		{BE87C472-310D-4ABC-BD1F-8DE7FD13EEFD} = {78F5BDBA-B79E-4651-8BA9-BA8CCFC7DF22}
+		{9DA8A95E-EBCA-45B0-A34F-1A74D2A2FB0B} = {47139E4E-5769-49B3-8523-154A784266E7}
 	EndGlobalSection
 EndGlobal

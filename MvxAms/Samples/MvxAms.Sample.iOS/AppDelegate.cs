@@ -24,8 +24,6 @@ namespace MvxAms.Sample.iOS
 
             _window.MakeKeyAndVisible();
 
-            Mvx.RegisterSingleton<IMvxAmsTouchTopViewController>(new MvxAmsTouchTopViewController(_window.RootViewController));
-
             return true;
         }
     }

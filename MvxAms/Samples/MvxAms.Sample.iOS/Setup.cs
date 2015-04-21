@@ -6,7 +6,6 @@ using Cirrious.MvvmCross.Touch.Platform;
 using Cirrious.MvvmCross.Touch.Views.Presenters;
 using Cirrious.MvvmCross.ViewModels;
 using Cirrious.MvvmCross.Views;
-using MobiliTips.MvxPlugins.MvxAms.LocalStore;
 using MobiliTips.MvxPlugins.MvxAms.Touch;
 using MobiliTips.MvxPlugins.MvxForms;
 using MvxAms.Sample.Configurations;
@@ -38,7 +37,9 @@ namespace MvxAms.Sample.iOS
 	    {
 	        base.InitializeLastChance();
 
-	        SQLitePCL.CurrentPlatform.Init();
+            Mvx.RegisterSingleton<IMvxAmsTouchTopViewController>(new MvxAmsTouchTopViewController(Window.RootViewController));
+
+            SQLitePCL.CurrentPlatform.Init();
 	    }
 
 	    protected override IMvxTouchViewPresenter CreatePresenter()
@@ -53,10 +54,10 @@ namespace MvxAms.Sample.iOS
 
         protected override IMvxPluginConfiguration GetPluginConfiguration(Type plugin)
         {
-            if(plugin == typeof (Plugin))
+            if (plugin == typeof (MobiliTips.MvxPlugins.MvxAms.Touch.Plugin))
                 return new MvxAmsPluginConfiguration();
 
-            if (plugin == typeof(PluginLoader))
+            if (plugin == typeof(MobiliTips.MvxPlugins.MvxAms.LocalStore.PluginLoader))
                 return new MvxAmsPluginLocalStoreExtensionConfiguration(Environment.GetFolderPath(Environment.SpecialFolder.Personal));
 
             return base.GetPluginConfiguration(plugin);
