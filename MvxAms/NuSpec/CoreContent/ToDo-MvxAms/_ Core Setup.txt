@@ -1,0 +1,28 @@
+1. Update/Create your Model classes so that they all inherit from EntityData abstract class 
+or ITableData if there's another parent class yet (see online documentation for tutorials).
+
+If your Model classes are not hosted by this project, you also need to install this nuget plugin into it (and remove config files from it).
+
+2. Update MvxAmsPluginConfiguration class with your own Azure URL and Key.
+
+[Optional] If your Model classes are not hosted by this project, you have to change ModelAssembly default value to: 
+	
+	ModelAssembly = typeof(NAME_OF_ANY_MODEL_CLASS).GetTypeInfo().Assembly;
+
+[Optional] If you want to change the initialization timeout default value to a custom one, set:
+
+	InitTimeout = TimeSpan.FromSeconds(60);
+
+3. You can now resolve IMvxAmsService from anywhere to use it (see online documentation for tutorials)
+
+
+NB: If you want to manage local data thanks to LocalTable<T> and Push methods
+you have to install the MvvmCross - Azure Mobile Services plugin Local Store extension
+
+
+Enjoy!
+
+
+Tutorials on http://mobilitips.wordpress.com
+Project on https://github.com/MobiliTips
+Contact on Twitter @MobiliTips

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MvxAms.Sample.Views.FirstView">
+  <StackLayout Orientation="Vertical">
+    <Button Text="Refresh" Command="{Binding RefreshAsyncCommand}" HorizontalOptions="FillAndExpand"></Button>
+    <Button Text="Login" Command="{Binding LoginAsyncCommand}" HorizontalOptions="FillAndExpand"></Button>
+    <Label Text="{Binding User.UserId}"></Label>
+    <ListView ItemsSource="{Binding Places}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <TextCell Text="{Binding Name}"></TextCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>

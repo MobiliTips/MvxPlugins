@@ -1,0 +1,14 @@
+PLEASE DON'T FORGET TO UPDATE MvxAmsPluginConfiguration FIRST AS THIS IS ONLY A PLUGIN EXTENSION
+
+1. [Optional] If you want to change the database file name default value to a custom one,
+you need to update MvxAmsPluginLocalStoreExtensionConfiguration with:
+
+	DatabaseFileName = "YOUR_CUSTOM_NAME_WITH_DB_EXTENSION";
+
+
+Enjoy!
+
+
+Tutorials on http://mobilitips.wordpress.com
+Project on https://github.com/MobiliTips
+Contact on Twitter @MobiliTips

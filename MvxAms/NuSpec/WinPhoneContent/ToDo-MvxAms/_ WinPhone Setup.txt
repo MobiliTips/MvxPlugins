@@ -1,0 +1,21 @@
+1. Add plugin configuration into the Setup class:
+
+		protected override IMvxPluginConfiguration GetPluginConfiguration(Type plugin)
+        {
+            if (plugin == typeof (MobiliTips.MvxPlugins.MvxAms.WindowsPhone.Plugin)) 
+                return new MvxAmsPluginConfiguration();
+
+            return base.GetPluginConfiguration(plugin);
+        }
+
+
+Enjoy!
+
+
+NB: If you want to manage local data thanks to LocalTable<T> and Push methods
+you have to install the MvvmCross - Azure Mobile Services plugin Local Store extension.
+
+
+Tutorials on http://mobilitips.wordpress.com
+Project on https://github.com/MobiliTips
+Contact on Twitter @MobiliTips

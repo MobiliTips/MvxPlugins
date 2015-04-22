@@ -21,7 +21,7 @@ namespace MobiliTips.MvxPlugins.MvxForms
             _viewSuffix = viewSuffix;
         }
 
-        public async void ChangePresentation(MvxPresentationHint hint)
+        public async virtual void ChangePresentation(MvxPresentationHint hint)
         {
             if (!(hint is MvxClosePresentationHint)) return;
 
@@ -38,7 +38,7 @@ namespace MobiliTips.MvxPlugins.MvxForms
             }
         }
 
-        public async void Show(MvxViewModelRequest request)
+        public async virtual void Show(MvxViewModelRequest request)
         {
             if (await TryShowPage(request)) return;
 

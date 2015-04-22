@@ -1,0 +1,24 @@
+﻿1. Add plugin configuration into the Setup class:
+
+		protected override IMvxPluginConfiguration GetPluginConfiguration(Type plugin)
+        {
+            if (plugin == typeof (MobiliTips.MvxPlugins.MvxAms.Droid.Plugin)) 
+                return new MvxAmsPluginConfiguration();
+
+            return base.GetPluginConfiguration(plugin);
+        }
+
+
+Enjoy!
+
+
+NB 1: If you want to manage local data thanks to LocalTable<T> and Push methods
+you have to install the MvvmCross - Azure Mobile Services plugin Local Store extension.
+
+NB 2: If you want to use this plugin with MvvmCross & Xamarin.Forms,
+please use MvvmCross - Xamarin Forms plugin ≥ 1.2.0-beta2
+
+
+Tutorials on http://mobilitips.wordpress.com
+Project on https://github.com/MobiliTips
+Contact on Twitter @MobiliTips
