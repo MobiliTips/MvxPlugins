@@ -17,14 +17,14 @@ MvvmCross plugin to work with Xamarin Forms on iOS, Android, WinPhone SL, WinSto
 It's a simple plugin allowing you to work with both MvvmCross and Xamarin Forms and based on Cheesebaron FormsPresenters code.
 Install the plugin and follow the "ToDo - MvxForms" instuctions on each platform.
 
-### Use
+### Usage
 
 You can work either with Xaml or cs views, it doens't matter.
 By default, the plugin will look for views with "View" suffix but anyway, you can tell the plugin to work with your own suffix (like "Page" as many prefer) by writing it into the presenter initialization (Setup file) like that (example for Android but the same for iOS, WinPhone or WinStore):
 
     var presenter = new MvxFormsAndroidViewPresenter(new MvxFormsApp(), "Page");
 
-Full tutorial aviable:
+Full tutorial available:
 * English: https://mobilitips.wordpress.com/2015/04/14/use-mvvmcross-with-xamarin-forms-thanks-to-mvxforms-plugin/
 * French: https://mobilitips.wordpress.com/2015/04/13/utiliser-mvvmcross-avec-xamarin-forms-grace-au-plugin-mvxforms/
 
@@ -46,11 +46,11 @@ Work with Azure Mobile Services thanks to MvvmCross framework with almost 1 line
 
 ### Install
 
-Aviable soon...
+Available soon...
 
-### Use
+### Usage
 
-Aviable soon...
+Available soon...
 
 Already working but private beta testing in progress.
 
@@ -67,11 +67,11 @@ This plugin extend possibilities of the MvvmCross - Azure Mobile Services plugin
 
 ### Install
 
-Aviable soon...
+Available soon...
 
-### Use
+### Usage
 
-Aviable soon...
+Available soon...
 
 Already working but private beta testing in progress.
 
