@@ -46,11 +46,11 @@ Work with Azure Mobile Services thanks to MvvmCross framework with almost 1 line
 
 ### Install
 
-Aviable soon...
+Available soon...
 
 ### Use
 
-Aviable soon...
+Available soon...
 
 Already working but private beta testing in progress.
 
@@ -67,11 +67,11 @@ This plugin extend possibilities of the MvvmCross - Azure Mobile Services plugin
 
 ### Install
 
-Aviable soon...
+Available soon...
 
 ### Use
 
-Aviable soon...
+Available soon...
 
 Already working but private beta testing in progress.
 
