@@ -1,5 +1,5 @@
 1. Update/Create your Model classes so that they all inherit from EntityData abstract class 
-or ITableData if there's another parent class yet (see online documentation for tutorials).
+or ITableData if there's another parent class yet.
 
 If your Model classes are not hosted by this project, you also need to install this nuget plugin into it (and remove config files from it).
 
@@ -9,15 +9,45 @@ If your Model classes are not hosted by this project, you also need to install t
 	
 	ModelAssembly = typeof(NAME_OF_ANY_MODEL_CLASS).GetTypeInfo().Assembly;
 
+[Optional] You can set an implementation of IMvxAmsCredentialsCacheService to manage credentials caching (save, load and clear)
+
+	CredentialCacheService = new YourIMvxAmsCredentialsCacheServiceImplementation();
+
+There's an MvxAmsCredentialsCacheService implementation example of IMvxAmsCredentialsCacheService 
+using Xamarin Settings plugin available online (see online documentation for tutorials or sample project)
+
+[Optional] You can set a custom http message handler to play with requests sent to the server
+Note that the MvxAmsIdentityHandler is available for authentication handling but not set by default.
+Here is what MvxAmsIdentityHandler do: 
+	If server returned an unauthorized response to a request (maybe user is not logged in or his token expired):
+		. if a credential cache service was provided and if there are strored credentials and if they're different from current, we send it back using it. 
+		. if no credential cache service was provided or if no credentials were stored or if unauthorized message comes again because of an expired stored auth token :
+			. if user already logged in once, its provider login View will show up
+			. if user never logged in, the default provider login View will appear (Facebook in this example)
+			. if default provider is set to None, the unauthorized response will be returned
+	
+	Handlers = new HttpMessageHandler[] { new MvxAmsIdentityHandler(MvxAmsAuthenticationProvider.Facebook) };
+
+[Optional] You can set your own json serializer settings
+
+    SerializerSettings = new MobileServiceJsonSerializerSettings
+    {
+        CamelCasePropertyNames = true
+    };
+
 [Optional] If you want to change the initialization timeout default value to a custom one, set:
 
 	InitTimeout = TimeSpan.FromSeconds(60);
 
-3. You can now resolve IMvxAmsService from anywhere to use it (see online documentation for tutorials)
+3. You can now resolve IMvxAmsService from anywhere to use it
 
 
-NB: If you want to manage local data thanks to LocalTable<T> and Push methods
-you have to install the MvvmCross - Azure Mobile Services plugin Local Store extension
+
+/!\ 1: If you want to manage local data thanks to LocalTable<T> and Push methods
+you have to install the MvvmCross - Azure Mobile Services plugin Local Store extension /!\
+
+/!\ 2: If you plan to use the email plus password LoginAsync and RegistrationAsync method as the EnsureLoggedInAsync one with controlToken to true,
+you have to create EmailLogin, EmailRegistration and ControlToken custom api controllers on your backend (see online documentation for tutorials) /!\
 
 
 Enjoy!

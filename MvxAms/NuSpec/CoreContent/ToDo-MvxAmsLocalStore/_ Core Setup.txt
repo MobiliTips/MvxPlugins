@@ -1,4 +1,4 @@
-PLEASE DON'T FORGET TO UPDATE MvxAmsPluginConfiguration FIRST AS THIS IS ONLY A PLUGIN EXTENSION
+PLEASE DON'T FORGET TO UPDATE MvxAmsPluginConfiguration FIRST AS THIS ONE IS ONLY A PLUGIN EXTENSION
 
 1. [Optional] If you want to change the database file name default value to a custom one,
 you need to update MvxAmsPluginLocalStoreExtensionConfiguration with:

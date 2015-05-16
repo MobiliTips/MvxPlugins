@@ -11,7 +11,7 @@ using MobiliTips.MvxPlugins.MvxAms.Data;
 
 namespace MobiliTips.MvxPlugins.MvxAms.LocalStore
 {
-    public class MvxAmsLocalStoreService : IMvxAmsLocalStoreService
+    internal class MvxAmsLocalStoreService : IMvxAmsLocalStoreService
     {
         private IMvxAmsPluginConfiguration _configuration;
         private IMvxAmsPluginLocalStoreExtensionConfiguration _localStoreConfiguration;

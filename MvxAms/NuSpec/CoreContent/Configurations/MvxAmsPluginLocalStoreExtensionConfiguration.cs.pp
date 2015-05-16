@@ -2,6 +2,9 @@
 
 namespace $rootnamespace$.Configurations
 {
+    /// <summary>
+    /// MvxAms plugin LocalStore extension configuration. To know how to use it, please read the ToDo-MvxAmsLocalStore
+    /// </summary>
     public class MvxAmsPluginLocalStoreExtensionConfiguration : MvxAmsPluginLocalStoreExtensionBaseConfiguration
     {
         public MvxAmsPluginLocalStoreExtensionConfiguration(string databaseFullPath) : base(databaseFullPath)

@@ -6,7 +6,7 @@ using Microsoft.WindowsAzure.MobileServices;
 
 namespace MobiliTips.MvxPlugins.MvxAms.Api
 {
-    public class MvxAmsApiService : IMvxAmsApiService
+    internal class MvxAmsApiService : IMvxAmsApiService
     {
         private readonly IMobileServiceClient _client;
 

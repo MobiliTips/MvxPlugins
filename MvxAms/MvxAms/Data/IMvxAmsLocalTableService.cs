@@ -1,6 +1,8 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.WindowsAzure.MobileServices;
+using Microsoft.WindowsAzure.MobileServices.Sync;
 
 namespace MobiliTips.MvxPlugins.MvxAms.Data
 {
@@ -8,20 +10,26 @@ namespace MobiliTips.MvxPlugins.MvxAms.Data
     /// Local specific data request service
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public interface IMvxAmsLocalTableService<T> : IMvxAmsTableService<T>
+    public interface IMvxAmsLocalTableService<T> : IMobileServiceSyncTable<T>
     {
-        /// <summary>
-        /// Pulls all items from remote Azure table matching the optional query
-        /// </summary>
-        /// <param name="query">Optional query to filter items to pull</param>
-        /// <returns></returns>
-        Task Pull(Func<IMobileServiceTableQuery<T>, IMobileServiceTableQuery<T>> query = null);
+        Task PullAsync();
 
-        /// <summary>
-        /// Deletes all items from local SQLite table
-        /// </summary>
-        /// <param name="force">Force deletion</param>
-        /// <returns></returns>
-        Task Purge(bool force = false);
+        Task PullAsync<U>(IMobileServiceTableQuery<U> query);
+
+        Task PullAsync(string query);
+
+        Task PullAsync<U>(IMobileServiceTableQuery<U> query, bool pushOtherTables, CancellationToken cancellationToken);
+
+        Task PullAsync(string query, IDictionary<string, string> parameters, bool pushOtherTables, CancellationToken cancellationToken);
+
+        Task PurgeAsync<U>(IMobileServiceTableQuery<U> query, CancellationToken cancellationToken);
+
+        Task PurgeAsync();
+
+        Task PurgeAsync<U>(IMobileServiceTableQuery<U> query);
+
+        Task PurgeAsync(string query);
+
+        Task PurgeAsync(string query, bool force, CancellationToken cancellationToken);
     }
 }

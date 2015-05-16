@@ -6,6 +6,7 @@ using Cirrious.CrossCore;
 using Cirrious.MvvmCross.ViewModels;
 using Microsoft.WindowsAzure.MobileServices;
 using MobiliTips.MvxPlugins.MvxAms;
+using MobiliTips.MvxPlugins.MvxAms.Identity;
 using MvxAms.Sample.Model;
 
 namespace MvxAms.Sample.ViewModels
@@ -26,7 +27,7 @@ namespace MvxAms.Sample.ViewModels
             _errorMessage = null;
             try
             {
-                await _azureMobileService.Data.LocalTable<Place>().Pull();
+                await _azureMobileService.Data.LocalTable<Place>().PullAsync();
             }
             catch (Exception ex)
             {
@@ -41,7 +42,10 @@ namespace MvxAms.Sample.ViewModels
                 _errorMessage = null;
                 try
                 {
-                    Places = await _azureMobileService.Data.LocalTable<Place>().ToCollectionAsync(query => query.Where(place => place.Name.Contains("Test")).Take(3));
+                    Places = await _azureMobileService.Data.LocalTable<Place>()
+                        .Where(p => p.Name.Contains("Test"))
+                        .Take(3)
+                        .ToCollectionAsync();
                 }
                 catch (Exception ex)
                 {
@@ -76,7 +80,8 @@ namespace MvxAms.Sample.ViewModels
             _errorMessage = null;
             try
             {
-                Places = await _azureMobileService.Data.LocalTable<Place>().ToCollectionAsync(query => query.Where(place => place.Name.Contains("Test")).Take(5));
+                Places = await _azureMobileService.Data.LocalTable<Place>()
+                        .ToCollectionAsync();
             }
             catch (Exception ex)
             {
@@ -103,7 +108,7 @@ namespace MvxAms.Sample.ViewModels
             _errorMessage = null;
             try
             {
-                User = await _azureMobileService.Identity.LoginAsync(MobileServiceAuthenticationProvider.Facebook);
+                User = await _azureMobileService.Identity.LoginAsync(MvxAmsAuthenticationProvider.Facebook);
             }
             catch (Exception ex)
             {

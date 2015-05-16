@@ -1,4 +1,5 @@
-﻿using MobiliTips.MvxPlugins.MvxAms.Api;
+﻿using Microsoft.WindowsAzure.MobileServices;
+using MobiliTips.MvxPlugins.MvxAms.Api;
 using MobiliTips.MvxPlugins.MvxAms.Data;
 using MobiliTips.MvxPlugins.MvxAms.Identity;
 
@@ -23,5 +24,10 @@ namespace MobiliTips.MvxPlugins.MvxAms
         /// Service to send custom request
         /// </summary>
         IMvxAmsApiService Api { get; }
+
+        /// <summary>
+        /// Json serializer settings
+        /// </summary>
+        MobileServiceJsonSerializerSettings SerializerSettings { get; }
     }
 }

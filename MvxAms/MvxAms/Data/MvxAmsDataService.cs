@@ -7,12 +7,12 @@ using Microsoft.WindowsAzure.MobileServices;
 
 namespace MobiliTips.MvxPlugins.MvxAms.Data
 {
-    public class MvxAmsDataService : IMvxAmsDataService
+    internal class MvxAmsDataService : IMvxAmsDataService
     {
         private readonly IMvxAmsPluginConfiguration _configuration;
         private readonly IMobileServiceClient _client;
         private readonly IMvxAmsLocalStoreService _localStoreService;
-        private bool _isInitilized;
+        private readonly IMvxAmsSynchronizationService _synchronization = new MvxAmsSynchronizationService();
 
         public MvxAmsDataService()
         {
@@ -26,7 +26,7 @@ namespace MobiliTips.MvxPlugins.MvxAms.Data
 
         private async Task<bool> InitializeAsync()
         {
-            if (!_isInitilized)
+            if (!IsInitialized)
             {
                 // Get the list of tables
                 List<Type> tableTypes;
@@ -61,16 +61,16 @@ namespace MobiliTips.MvxPlugins.MvxAms.Data
                     remoteTable.Invoke(this, null);
                 }
 
-                _isInitilized = _localStoreService == null || _client.SyncContext.IsInitialized;
+                IsInitialized = _localStoreService == null || _client.SyncContext.IsInitialized;
             }
-            return _isInitilized;
+            return IsInitialized;
         }
 
         public IMvxAmsLocalTableService<T> LocalTable<T>()
         {
             if (_localStoreService == null)
-                throw new TypeLoadException(string.Format("Unable to get {0} local table. ", typeof(T).Name) + 
-                    "MvvmCross - Azure Mobile Services Local Store plugin must be installed to process this request.");
+                throw new TypeLoadException(string.Format("Unable to get {0} local table. ", typeof(T).Name) +
+                    "MvvmCross - Azure Mobile Services plugin Local Store extension must be installed to process this request.");
 
             IMvxAmsLocalTableService<T> localTable;
             Mvx.TryResolve(out localTable);
@@ -94,29 +94,8 @@ namespace MobiliTips.MvxPlugins.MvxAms.Data
             return remoteTable;
         }
 
-        public async Task PushAsync()
-        {
-            if (_localStoreService == null)
-                throw new TypeLoadException("Unable to push your data. " +
-                                            "MvvmCross - Azure Mobile Services Local Store plugin must be installed to process this request.");
+        public IMvxAmsSynchronizationService Synchronization { get { return _synchronization; } }
 
-            if (!await InitializeAsync())
-                throw new MobileServiceInvalidOperationException("Unable to push your data. Initialization failed.", null, null);
-            
-            await _client.SyncContext.PushAsync();
-        }
-
-        public long PendingOperations
-        {
-            get
-            {
-
-                if (_localStoreService == null)
-                    throw new TypeLoadException("Unable to get pending operations. " +
-                                                "MvvmCross - Azure Mobile Services Local Store plugin must be installed to process this request.");
-
-                return _client.SyncContext.PendingOperations;
-            }
-        }
+        public bool IsInitialized { get; private set; }
     }
 }

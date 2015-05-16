@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Net.Http;
 using System.Reflection;
 using Cirrious.CrossCore.Plugins;
+using Microsoft.WindowsAzure.MobileServices;
+using MobiliTips.MvxPlugins.MvxAms.Identity;
 
 namespace MobiliTips.MvxPlugins.MvxAms
 {
@@ -10,6 +13,7 @@ namespace MobiliTips.MvxPlugins.MvxAms
     public abstract class MvxAmsPluginBaseConfiguration : IMvxAmsPluginConfiguration, IMvxPluginConfiguration
     {
         private TimeSpan _initTimeout = TimeSpan.FromSeconds(30);
+        private MobileServiceJsonSerializerSettings _serializerSettings = new MobileServiceJsonSerializerSettings();
 
         /// <summary>
         /// Azure Mobile Service application URL
@@ -27,7 +31,26 @@ namespace MobiliTips.MvxPlugins.MvxAms
         public Assembly ModelAssembly { get; set; }
 
         /// <summary>
-        /// Initialization timeout
+        /// [Optional] Credential cache service to save credentials on device
+        /// </summary>
+        public IMvxAmsCredentialsCacheService CredentialsCacheService { get; set; }
+
+        /// <summary>
+        /// Custom Http message handlers (optional)
+        /// </summary>
+        public HttpMessageHandler[] Handlers { get; set; }
+
+        /// <summary>
+        /// Json serializer settings
+        /// </summary>
+        public MobileServiceJsonSerializerSettings SerializerSettings
+        {
+            get { return _serializerSettings; }
+            set { _serializerSettings = value; }
+        }
+
+        /// <summary>
+        /// Initialization timeout (optional)
         /// </summary>
         /// <value>30sec</value>
         public TimeSpan InitTimeout

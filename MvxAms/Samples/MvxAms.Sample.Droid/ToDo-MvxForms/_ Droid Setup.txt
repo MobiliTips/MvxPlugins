@@ -1,0 +1,44 @@
+1. Into the SplashScreen class, add:
+
+		public override void InitializationComplete()
+        {
+            StartActivity(typeof(MvxFormsApplicationMainActivity));
+        }
+
+        protected override void OnCreate(Android.OS.Bundle bundle)
+        {
+            Forms.Init(this, bundle);
+            // Leverage controls' StyleId attrib. to Xamarin.UITest
+            Forms.ViewInitialized += (sender, e) =>
+            {
+                if (!string.IsNullOrWhiteSpace(e.View.StyleId))
+                {
+                    e.NativeView.ContentDescription = e.View.StyleId;
+                }
+            };
+
+            base.OnCreate(bundle);
+        }
+
+
+2. Into the Setup class, add:
+
+        protected override IMvxAndroidViewPresenter CreateViewPresenter()
+        {
+            var presenter = new MvxFormsAndroidViewPresenter(new MvxFormsApp());
+            Mvx.RegisterSingleton<IMvxViewPresenter>(presenter);
+
+            return presenter;
+        }
+
+
+3. You can now remove no more used files like MainActivity.cs, all views except BaseView.cs and all .axml layout files except SplashScreen.axml
+
+
+
+Enjoy!
+
+
+Tutorials on http://mobilitips.wordpress.com
+Project on http://www.github.com/MobiliTips
+Contact on Twitter @MobiliTips

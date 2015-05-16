@@ -1,14 +1,9 @@
-﻿using System.Threading.Tasks;
+﻿using Microsoft.WindowsAzure.MobileServices;
 
 namespace MobiliTips.MvxPlugins.MvxAms.Data
 {
-    public interface IMvxAmsRemoteTableService<T> : IMvxAmsTableService<T>
+    public interface IMvxAmsRemoteTableService<T> : IMobileServiceTable<T>
     {
-        /// <summary>
-        /// Undelete an instance from the remote Azure table if soft delete is enabled
-        /// </summary>
-        /// <param name="instance">Instance to undelete from table</param>
-        /// <returns></returns>
-        Task UndeleteAsync(T instance);
+        // Todo: add some extra methods here for tables
     }
 }

@@ -35,6 +35,9 @@ namespace MvxAms.Sample.Droid
 		public partial class Attribute
 		{
 			
+			// aapt resource value: 0x7f010005
+			public const int GroupItemTemplate = 2130771973;
+			
 			// aapt resource value: 0x7f010000
 			public const int MvxBind = 2130771968;
 			
@@ -47,8 +50,8 @@ namespace MvxAms.Sample.Droid
 			// aapt resource value: 0x7f010001
 			public const int MvxLang = 2130771969;
 			
-			// aapt resource value: 0x7f010005
-			public const int MvxSource = 2130771973;
+			// aapt resource value: 0x7f010006
+			public const int MvxSource = 2130771974;
 			
 			// aapt resource value: 0x7f010002
 			public const int MvxTemplate = 2130771970;
@@ -85,8 +88,8 @@ namespace MvxAms.Sample.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int MvxBindingTagUnique = 2131034112;
+			// aapt resource value: 0x7f040000
+			public const int MvxBindingTagUnique = 2130968576;
 			
 			static Id()
 			{
@@ -102,7 +105,10 @@ namespace MvxAms.Sample.Droid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int SplashScreen = 2130903040;
+			public const int FirstView = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int SplashScreen = 2130903041;
 			
 			static Layout()
 			{
@@ -117,11 +123,11 @@ namespace MvxAms.Sample.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040001
-			public const int ApplicationName = 2130968577;
+			// aapt resource value: 0x7f060001
+			public const int ApplicationName = 2131099649;
 			
-			// aapt resource value: 0x7f040000
-			public const int Hello = 2130968576;
+			// aapt resource value: 0x7f060000
+			public const int Hello = 2131099648;
 			
 			static String()
 			{
@@ -136,8 +142,8 @@ namespace MvxAms.Sample.Droid
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f060000
-			public const int Theme_Splash = 2131099648;
+			// aapt resource value: 0x7f050000
+			public const int Theme_Splash = 2131034112;
 			
 			static Style()
 			{
@@ -168,8 +174,14 @@ namespace MvxAms.Sample.Droid
 			// aapt resource value: 0
 			public const int MvxControl_MvxTemplate = 0;
 			
-			public static int[] MvxImageView = new int[] {
+			public static int[] MvxExpandableListView = new int[] {
 					2130771973};
+			
+			// aapt resource value: 0
+			public const int MvxExpandableListView_GroupItemTemplate = 0;
+			
+			public static int[] MvxImageView = new int[] {
+					2130771974};
 			
 			// aapt resource value: 0
 			public const int MvxImageView_MvxSource = 0;

@@ -21,7 +21,10 @@ namespace MobiliTips.MvxPlugins.MvxAms.WindowsPhone
         public void Load()
         {
             Mvx.RegisterSingleton(_configuration);
-            Mvx.RegisterSingleton<IMobileServiceClient>(new MobileServiceClient(_configuration.AmsAppUrl, _configuration.AmsAppKey));
+            Mvx.RegisterSingleton<IMobileServiceClient>(new MobileServiceClient(_configuration.AmsAppUrl, _configuration.AmsAppKey, _configuration.Handlers)
+            {
+                SerializerSettings = _configuration.SerializerSettings
+            });
             Mvx.RegisterType<IMvxAmsPlatformIdentityService, MvxAmsWindowsPhoneIdentityService>();
             Mvx.RegisterType<IMvxAmsService, MvxAmsService>();
         }

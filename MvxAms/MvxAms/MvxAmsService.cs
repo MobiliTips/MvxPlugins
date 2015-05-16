@@ -1,3 +1,5 @@
+using Cirrious.CrossCore;
+using Microsoft.WindowsAzure.MobileServices;
 using MobiliTips.MvxPlugins.MvxAms.Api;
 using MobiliTips.MvxPlugins.MvxAms.Data;
 using MobiliTips.MvxPlugins.MvxAms.Identity;
@@ -6,23 +8,31 @@ namespace MobiliTips.MvxPlugins.MvxAms
 {
     public class MvxAmsService : IMvxAmsService
     {
-        private readonly IMvxAmsDataService _data = new MvxAmsDataService();
-        private readonly IMvxAmsIdentityService _identity = new MvxAmsIdentityService();
-        private readonly IMvxAmsApiService _api = new MvxAmsApiService();
+        private readonly IMvxAmsPluginConfiguration _configuration;
 
-        public IMvxAmsDataService Data
+        public MvxAmsService()
         {
-            get { return _data; }
+            _configuration = Mvx.Resolve<IMvxAmsPluginConfiguration>();
+
+            Data = new MvxAmsDataService();
+            Mvx.RegisterSingleton(Data);
+
+            Identity = new MvxAmsIdentityService();
+            Mvx.RegisterSingleton(Identity);
+
+            Api = new MvxAmsApiService();
+            Mvx.RegisterSingleton(Api);
         }
 
-        public IMvxAmsIdentityService Identity
-        {
-            get { return _identity; }
-        }
+        public IMvxAmsDataService Data { get; private set; }
 
-        public IMvxAmsApiService Api
+        public IMvxAmsIdentityService Identity { get; private set; }
+
+        public IMvxAmsApiService Api { get; private set; }
+
+        public MobileServiceJsonSerializerSettings SerializerSettings 
         {
-            get { return _api; }
+            get { return _configuration.SerializerSettings; }
         }
     }
 }
