@@ -1,5 +1,4 @@
 using System;
-using System.Reflection;
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Platform;
 using Cirrious.CrossCore.Plugins;
@@ -8,7 +7,8 @@ using Cirrious.MvvmCross.Views;
 using Cirrious.MvvmCross.WindowsPhone.Platform;
 using Cirrious.MvvmCross.WindowsPhone.Views;
 using Microsoft.Phone.Controls;
-using MobiliTips.MvxPlugins.MvxAms;
+using MobiliTips.MvxPlugins.MvxAms.LocalStore;
+using MobiliTips.MvxPlugins.MvxAms.WindowsPhone;
 using MobiliTips.MvxPlugins.MvxForms;
 using MvxAms.Sample.Configurations;
 using MvxAms.Sample.WinPhone.Presenters;
@@ -44,10 +44,10 @@ namespace MvxAms.Sample.WinPhone
 
         protected override IMvxPluginConfiguration GetPluginConfiguration(Type plugin)
         {
-            if (plugin == typeof(MobiliTips.MvxPlugins.MvxAms.WindowsPhone.Plugin))
+            if (plugin == typeof(Plugin))
                 return new MvxAmsPluginConfiguration();
 
-            if (plugin == typeof(MobiliTips.MvxPlugins.MvxAms.LocalStore.PluginLoader))
+            if (plugin == typeof(PluginLoader))
                 return new MvxAmsPluginLocalStoreExtensionConfiguration(string.Empty);
 
             return base.GetPluginConfiguration(plugin);

@@ -47,6 +47,7 @@
     <Compile Include="Data\IMvxAmsLocalStoreService.cs" />
     <Compile Include="Data\IMvxAmsLocalTableService.cs" />
     <Compile Include="Data\IMvxAmsRemoteTableService.cs" />
+    <Compile Include="Data\IMvxAmsTableService.cs" />
     <Compile Include="Data\ITableData.cs" />
     <Compile Include="Data\MvxAmsDataService.cs" />
     <Compile Include="Data\MvxAmsRemoteTableService.cs" />

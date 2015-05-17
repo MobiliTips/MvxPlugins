@@ -42,10 +42,7 @@ namespace MvxAms.Sample.ViewModels
                 _errorMessage = null;
                 try
                 {
-                    Places = await _azureMobileService.Data.LocalTable<Place>()
-                        .Where(p => p.Name.Contains("Test"))
-                        .Take(3)
-                        .ToCollectionAsync();
+                    Places = await _azureMobileService.Data.LocalTable<Place>().ToCollectionAsync(q => q.Where(p => p.Name.Contains("Test")).Take(3));
                 }
                 catch (Exception ex)
                 {
@@ -80,8 +77,7 @@ namespace MvxAms.Sample.ViewModels
             _errorMessage = null;
             try
             {
-                Places = await _azureMobileService.Data.LocalTable<Place>()
-                        .ToCollectionAsync();
+                Places = await _azureMobileService.Data.LocalTable<Place>().ToCollectionAsync();
             }
             catch (Exception ex)
             {
