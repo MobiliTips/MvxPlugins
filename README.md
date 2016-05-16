@@ -1,4 +1,4 @@
-Please find new plugins commited to https/github.com/Apptracktive
+Please find new plugins commited to https://github.com/Apptracktive
 
 # MvxPlugins
 MVVMCross plugins
